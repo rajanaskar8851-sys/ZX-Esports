@@ -22,6 +22,7 @@
     --border:#26352d;
     --muted:#7d8982;
     --gold:#f6c945;
+    --red:#ff5d68;
 }
 
 body{
@@ -48,9 +49,7 @@ button{
 }
 
 
-/* =========================
-   AUTH
-========================= */
+/* AUTH */
 
 .auth{
     min-height:100vh;
@@ -164,9 +163,7 @@ button{
 }
 
 
-/* =========================
-   SCREEN
-========================= */
+/* SCREEN */
 
 .screen{
     display:none;
@@ -203,13 +200,7 @@ button{
 }
 
 
-/* =========================
-   HOME
-========================= */
-
-#home{
-    padding-bottom:80px;
-}
+/* HOME */
 
 .top{
     padding:18px;
@@ -222,6 +213,7 @@ button{
     display:flex;
     gap:10px;
     align-items:center;
+    cursor:pointer;
 }
 
 .avatar{
@@ -268,9 +260,7 @@ button{
 }
 
 
-/* =========================
-   COIN WALLET
-========================= */
+/* WALLET */
 
 .wallet{
     margin:3px 17px 15px;
@@ -304,7 +294,7 @@ button{
     display:flex;
     align-items:center;
     justify-content:center;
-    font-size:18px;
+    font-size:15px;
     font-weight:900;
     box-shadow:0 4px 15px rgba(246,201,69,.25);
 }
@@ -334,9 +324,7 @@ button{
 }
 
 
-/* =========================
-   SECTION
-========================= */
+/* SECTION */
 
 .section{
     padding:12px 17px;
@@ -359,9 +347,28 @@ button{
 }
 
 
-/* =========================
-   CATEGORIES
-========================= */
+/* SEARCH */
+
+.searchBox{
+    padding:15px 17px 5px;
+}
+
+.searchInput{
+    width:100%;
+    padding:13px 15px;
+    border-radius:13px;
+    border:1px solid var(--border);
+    background:#101712;
+    color:white;
+    outline:none;
+}
+
+.searchInput:focus{
+    border-color:var(--green);
+}
+
+
+/* CATEGORIES */
 
 .categories{
     display:grid;
@@ -389,9 +396,7 @@ button{
 }
 
 
-/* =========================
-   TOURNAMENT CARDS
-========================= */
+/* TOURNAMENT */
 
 .tournaments{
     display:flex;
@@ -448,6 +453,17 @@ button{
     border-radius:8px;
 }
 
+.prize{
+    margin-top:9px;
+    padding:9px;
+    border-radius:9px;
+    background:rgba(246,201,69,.08);
+    border:1px solid rgba(246,201,69,.18);
+    color:#f6d45a;
+    font-size:11px;
+    font-weight:bold;
+}
+
 .join{
     width:100%;
     margin-top:10px;
@@ -459,10 +475,95 @@ button{
     font-weight:900;
 }
 
+.joined{
+    background:#26352d;
+    color:#8ff0ba;
+}
 
-/* =========================
-   NOTIFICATIONS
-========================= */
+
+/* EMPTY */
+
+.empty{
+    padding:35px 15px;
+    text-align:center;
+    border-radius:17px;
+    border:1px dashed #29372f;
+    background:#0c120e;
+}
+
+.emptyIcon{
+    font-size:35px;
+    margin-bottom:10px;
+}
+
+.empty h3{
+    font-size:15px;
+}
+
+.empty p{
+    color:var(--muted);
+    font-size:10px;
+    margin-top:5px;
+}
+
+
+/* PROFILE */
+
+.profileCard{
+    margin:0 17px;
+    padding:20px;
+    border-radius:20px;
+    background:linear-gradient(135deg,#153d29,#0e1712);
+    border:1px solid rgba(57,217,138,.2);
+    text-align:center;
+}
+
+.profileAvatar{
+    width:72px;
+    height:72px;
+    margin:auto;
+    border-radius:22px;
+    background:var(--green);
+    color:#06100a;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    font-weight:900;
+    font-size:25px;
+}
+
+.profileCard h3{
+    margin-top:12px;
+}
+
+.profileCard p{
+    color:var(--muted);
+    font-size:10px;
+    margin-top:4px;
+}
+
+.detail{
+    display:flex;
+    justify-content:space-between;
+    padding:13px 0;
+    border-bottom:1px solid #223028;
+}
+
+.detail:last-child{
+    border-bottom:0;
+}
+
+.detail span{
+    color:var(--muted);
+    font-size:10px;
+}
+
+.detail strong{
+    font-size:11px;
+}
+
+
+/* NOTIFICATION */
 
 .notification{
     padding:13px;
@@ -487,9 +588,7 @@ button{
 }
 
 
-/* =========================
-   ADMIN
-========================= */
+/* ADMIN */
 
 .adminGrid{
     padding:0 17px;
@@ -555,9 +654,7 @@ button{
 }
 
 
-/* =========================
-   CREATE ROOM
-========================= */
+/* FORM */
 
 .formBox{
     margin:0 17px;
@@ -623,9 +720,7 @@ button{
 }
 
 
-/* =========================
-   EDIT ROOM
-========================= */
+/* EDIT */
 
 .editRoom{
     background:#101712;
@@ -649,6 +744,12 @@ button{
     font-size:13px;
 }
 
+.editPrize{
+    color:#f6d45a;
+    font-size:10px;
+    margin-top:5px;
+}
+
 .editButtons{
     display:flex;
     gap:7px;
@@ -668,10 +769,68 @@ button{
     color:var(--green);
 }
 
+.editButtons .delete{
+    color:#ff6d76;
+}
 
-/* =========================
-   PAYMENT / COIN
-========================= */
+
+/* PLAYERS */
+
+.playerCard{
+    padding:14px;
+    background:#101712;
+    border:1px solid #233128;
+    border-radius:15px;
+    margin-bottom:9px;
+}
+
+.playerTop{
+    display:flex;
+    align-items:center;
+    gap:10px;
+}
+
+.playerAvatar{
+    width:40px;
+    height:40px;
+    border-radius:12px;
+    background:#193524;
+    color:var(--green);
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    font-weight:bold;
+}
+
+.playerTop strong{
+    font-size:13px;
+}
+
+.playerTop small{
+    display:block;
+    color:var(--muted);
+    font-size:9px;
+    margin-top:3px;
+}
+
+.playerDetails{
+    margin-top:10px;
+    padding-top:10px;
+    border-top:1px solid #233128;
+}
+
+.playerDetails p{
+    color:#9aa59f;
+    font-size:9px;
+    margin:4px 0;
+}
+
+.playerDetails b{
+    color:white;
+}
+
+
+/* COIN */
 
 .coinBox{
     margin:0 17px;
@@ -694,7 +853,7 @@ button{
     justify-content:center;
     color:#674600;
     font-weight:900;
-    font-size:28px;
+    font-size:24px;
 }
 
 .coinBox h3{
@@ -718,9 +877,7 @@ button{
 }
 
 
-/* =========================
-   BOTTOM NAV
-========================= */
+/* BOTTOM NAV */
 
 .bottom{
     position:fixed;
@@ -743,6 +900,7 @@ button{
     color:#69756e;
     font-size:8px;
     cursor:pointer;
+    min-width:60px;
 }
 
 .nav div{
@@ -755,9 +913,7 @@ button{
 }
 
 
-/* =========================
-   TOAST
-========================= */
+/* TOAST */
 
 .toast{
     position:fixed;
@@ -782,9 +938,7 @@ button{
 }
 
 
-/* =========================
-   ANIMATIONS
-========================= */
+/* ANIMATION */
 
 @keyframes logoIn{
     from{
@@ -819,15 +973,9 @@ button{
     }
 }
 
-@keyframes screenOut{
-    from{
-        opacity:1;
-        transform:none;
-    }
-    to{
-        opacity:0;
-        transform:translateX(-25px);
-    }
+@keyframes pulse{
+    0%,100%{box-shadow:0 0 0 rgba(57,217,138,0)}
+    50%{box-shadow:0 0 25px rgba(57,217,138,.15)}
 }
 </style>
 </head>
@@ -837,16 +985,14 @@ button{
 <div class="app">
 
 
-<!-- ==================================================
-REGISTER
-================================================== -->
+<!-- REGISTER -->
 
 <section id="register" class="auth">
 
 <div class="logo">
-    <div class="logoBox">ZX</div>
-    <h1>ZX ESPORTS</h1>
-    <p>FREE FIRE TOURNAMENT PLATFORM</p>
+<div class="logoBox">ZX</div>
+<h1>ZX ESPORTS</h1>
+<p>FREE FIRE TOURNAMENT PLATFORM</p>
 </div>
 
 <div class="authCard">
@@ -890,16 +1036,14 @@ Already registered?
 </section>
 
 
-<!-- ==================================================
-LOGIN
-================================================== -->
+<!-- LOGIN -->
 
 <section id="login" class="auth" style="display:none">
 
 <div class="logo">
-    <div class="logoBox">ZX</div>
-    <h1>ZX ESPORTS</h1>
-    <p>FREE FIRE TOURNAMENT PLATFORM</p>
+<div class="logoBox">ZX</div>
+<h1>ZX ESPORTS</h1>
+<p>FREE FIRE TOURNAMENT PLATFORM</p>
 </div>
 
 <div class="authCard">
@@ -928,21 +1072,21 @@ Don't have an account?
 </section>
 
 
-<!-- ==================================================
-HOME
-================================================== -->
+<!-- HOME -->
 
 <section id="home" class="screen">
 
 <div class="top">
 
-<div class="profile">
+<div class="profile" onclick="openProfile()">
+
 <div class="avatar" id="avatar">ZX</div>
 
 <div class="welcome">
 <small>Welcome back 👋</small>
 <strong id="homeName">Player</strong>
 </div>
+
 </div>
 
 <div class="actions">
@@ -952,10 +1096,11 @@ HOME
 <button class="iconBtn adminBtn" onclick="openAdmin()">⚙️</button>
 
 </div>
+
 </div>
 
 
-<!-- COIN WALLET -->
+<!-- WALLET -->
 
 <div class="wallet">
 
@@ -977,15 +1122,14 @@ HOME
 
 <div class="walletBtns">
 
-<button onclick="openCoinScreen()">
-🪙 Coin Center
-</button>
+<button onclick="openCoinScreen()">🪙 Coin Center</button>
 
-<button onclick="showToast('Coin withdrawal is unavailable in this prototype')">
+<button onclick="showToast('Withdraw feature requires a secure backend')">
 Withdraw
 </button>
 
 </div>
+
 </div>
 
 
@@ -1024,7 +1168,7 @@ Withdraw
 </div>
 
 
-<!-- TOURNAMENTS -->
+<!-- BATTLES -->
 
 <div class="section">
 
@@ -1040,9 +1184,133 @@ Withdraw
 </section>
 
 
-<!-- ==================================================
-NOTIFICATIONS
-================================================== -->
+<!-- SEARCH -->
+
+<section id="search" class="screen">
+
+<div class="header">
+
+<button class="back" onclick="goHome()">←</button>
+
+<div>
+<h2>Search Tournament</h2>
+<p>Find tournament by title</p>
+</div>
+
+</div>
+
+<div class="searchBox">
+
+<input
+id="searchInput"
+class="searchInput"
+placeholder="🔍 Search tournament name..."
+oninput="searchTournaments()">
+
+</div>
+
+<div class="section">
+
+<div class="sectionTitle">
+<h3>Search Results</h3>
+<span id="searchCount">0</span>
+</div>
+
+<div id="searchResults" class="tournaments"></div>
+
+</div>
+
+</section>
+
+
+<!-- MY TOURNAMENT -->
+
+<section id="myTournament" class="screen">
+
+<div class="header">
+
+<button class="back" onclick="goHome()">←</button>
+
+<div>
+<h2>My Tournament</h2>
+<p>Your joined battles</p>
+</div>
+
+</div>
+
+<div class="section">
+
+<div id="myTournamentList"></div>
+
+</div>
+
+</section>
+
+
+<!-- PROFILE -->
+
+<section id="profileScreen" class="screen">
+
+<div class="header">
+
+<button class="back" onclick="goHome()">←</button>
+
+<div>
+<h2>My Profile</h2>
+<p>Your account information</p>
+</div>
+
+</div>
+
+<div class="profileCard">
+
+<div class="profileAvatar" id="profileAvatar">ZX</div>
+
+<h3 id="profileName">Player</h3>
+
+<p>ZX Esports Player</p>
+
+<div style="margin-top:18px;text-align:left">
+
+<div class="detail">
+<span>Username</span>
+<strong id="profileUsername">-</strong>
+</div>
+
+<div class="detail">
+<span>Email</span>
+<strong id="profileEmail">-</strong>
+</div>
+
+<div class="detail">
+<span>Phone</span>
+<strong id="profilePhone">-</strong>
+</div>
+
+<div class="detail">
+<span>Joined Tournaments</span>
+<strong id="profileTournaments">0</strong>
+</div>
+
+<div class="detail">
+<span>ZX Coins</span>
+<strong id="profileCoins">0</strong>
+</div>
+
+</div>
+
+</div>
+
+<div class="section">
+
+<button class="primary" onclick="logout()">LOGOUT</button>
+
+</div>
+
+</section>
+
+
+<!-- NOTIFICATIONS -->
 
 <section id="notifications" class="screen">
 
@@ -1062,12 +1330,11 @@ NOTIFICATIONS
 <div id="notificationList"></div>
 
 </div>
+
 </section>
 
 
-<!-- ==================================================
-COIN CENTER
-================================================== -->
+<!-- COIN CENTER -->
 
 <section id="coins" class="screen">
 
@@ -1077,7 +1344,7 @@ COIN CENTER
 
 <div>
 <h2>Coin Center</h2>
-<p>ZX Esports coin prototype</p>
+<p>ZX Esports wallet</p>
 </div>
 
 </div>
@@ -1091,13 +1358,13 @@ COIN CENTER
 </h3>
 
 <p>
-Gold FF coin system for the prototype.
+Gold FF Coins
 <br>
-Coin conversion shown here is for UI testing only.
+1 ₹ = 1 Coin
 </p>
 
 <span class="demo">
-DEMO / TEST MODE
+PROTOTYPE WALLET
 </span>
 
 </div>
@@ -1115,9 +1382,7 @@ DEMO / TEST MODE
 </section>
 
 
-<!-- ==================================================
-ADMIN LOGIN
-================================================== -->
+<!-- ADMIN LOGIN -->
 
 <section id="adminLogin" class="screen">
 
@@ -1134,13 +1399,11 @@ ADMIN LOGIN
 
 <div class="section">
 
-<div class="authCard" style="animation:none">
+<div class="authCard">
 
 <h2>Admin Login</h2>
 
-<p class="sub">
-Demo administrator access
-</p>
+<p class="sub">Administrator access</p>
 
 <div class="field">
 <label>Admin Username</label>
@@ -1163,9 +1426,7 @@ ENTER ADMIN PANEL
 </section>
 
 
-<!-- ==================================================
-ADMIN PANEL
-================================================== -->
+<!-- ADMIN PANEL -->
 
 <section id="adminPanel" class="screen">
 
@@ -1180,7 +1441,6 @@ ADMIN PANEL
 
 </div>
 
-
 <div class="adminGrid">
 
 <div class="stat">
@@ -1189,8 +1449,8 @@ ADMIN PANEL
 </div>
 
 <div class="stat">
-<span>USERS</span>
-<strong id="adminUsers">1</strong>
+<span>REGISTERED PLAYERS</span>
+<strong id="adminUsers">0</strong>
 </div>
 
 <div class="stat">
@@ -1199,7 +1459,7 @@ ADMIN PANEL
 </div>
 
 <div class="stat">
-<span>COINS</span>
+<span>TOTAL COINS</span>
 <strong id="adminCoins">0</strong>
 </div>
 
@@ -1214,7 +1474,7 @@ ADMIN PANEL
 
 <div>
 <h4>Create Custom Room</h4>
-<p>Create Solo, Duo or Squad room</p>
+<p>Create Solo, Duo or Squad tournament</p>
 </div>
 
 </div>
@@ -1226,7 +1486,19 @@ ADMIN PANEL
 
 <div>
 <h4>Edit Custom Rooms</h4>
-<p>Edit or delete existing rooms</p>
+<p>Edit or delete existing tournaments</p>
+</div>
+
+</div>
+
+
+<div class="adminOption" onclick="openPlayers()">
+
+<div class="adminOptionIcon">👥</div>
+
+<div>
+<h4>Registered Players</h4>
+<p>View all registered player records</p>
 </div>
 
 </div>
@@ -1250,7 +1522,7 @@ ADMIN PANEL
 
 <div>
 <h4>Coin Center</h4>
-<p>View prototype coin activity</p>
+<p>View wallet information</p>
 </div>
 
 </div>
@@ -1260,9 +1532,7 @@ ADMIN PANEL
 </section>
 
 
-<!-- ==================================================
-CREATE ROOM
-================================================== -->
+<!-- CREATE ROOM -->
 
 <section id="createRoom" class="screen">
 
@@ -1271,129 +1541,85 @@ CREATE ROOM
 <button class="back" onclick="openAdminPanel()">←</button>
 
 <div>
-<h2 id="createTitle">Create Custom Room</h2>
-<p>Manage Free Fire battle room</p>
+<h2 id="roomFormTitle">Create Tournament</h2>
+<p>Customize Free Fire battle</p>
 </div>
 
 </div>
-
 
 <div class="formBox">
 
 <div class="formField">
-
-<label>Room Thumbnail</label>
-
-<input
-class="input"
-type="file"
-id="roomImage"
-accept="image/*"
-onchange="previewImage(event)"
->
-
-<img id="imagePreview" class="preview">
-
+<label>Tournament Title</label>
+<input id="roomTitle" placeholder="Example: ZX Night Battle">
 </div>
 
 
 <div class="formField">
-
-<label>Room Name</label>
-
-<input
-class="input"
-id="roomName"
-placeholder="Example: ZX Night Battle"
->
-
+<label>Room Thumbnail URL</label>
+<input id="roomThumb" placeholder="Paste image URL">
 </div>
+
+<img id="thumbPreview"
+class="preview"
+alt="Thumbnail Preview">
 
 
 <div class="formField">
 
-<label>Game Mode</label>
+<label>Mode</label>
 
 <div class="modes">
 
-<div class="mode selected" onclick="selectMode(this,'Solo')">
-👤 Solo
+<div class="mode selected" data-mode="Solo" onclick="selectMode(this)">
+Solo
 </div>
 
-<div class="mode" onclick="selectMode(this,'Duo')">
-👥 Duo
+<div class="mode" data-mode="Duo" onclick="selectMode(this)">
+Duo
 </div>
 
-<div class="mode" onclick="selectMode(this,'Squad')">
-🔥 Squad
-</div>
-
+<div class="mode" data-mode="Squad" onclick="selectMode(this)">
+Squad
 </div>
 
 </div>
-
-
-<div class="formField">
-
-<label>Date</label>
-
-<input
-class="input"
-type="date"
-id="roomDate"
->
 
 </div>
 
 
 <div class="formField">
-
-<label>Time</label>
-
-<input
-class="input"
-type="time"
-id="roomTime"
->
-
+<label>Tournament Time</label>
+<input id="roomTime" type="datetime-local">
 </div>
 
 
 <div class="formField">
+<label>Prize Pool</label>
+<input id="roomPrize" type="number" min="0" placeholder="Example: 500">
+</div>
 
+
+<div class="formField">
+<label>Entry Fee / Coins</label>
+<input id="roomEntry" type="number" min="0" placeholder="Example: 10">
+</div>
+
+
+<div class="formField">
 <label>Room ID</label>
-
-<input
-class="input"
-id="roomId"
-placeholder="Example: ZX123456"
->
-
+<input id="roomId" placeholder="Example: 12345678">
 </div>
 
 
 <div class="formField">
-
-<label>Room Status</label>
-
-<select id="roomStatus">
-
-<option>Upcoming</option>
-<option>Ongoing</option>
-<option>Completed</option>
-
-</select>
-
+<label>Room Password</label>
+<input id="roomPassword" placeholder="Room password">
 </div>
 
 
-<button
-class="primary"
-id="saveRoomButton"
-onclick="saveRoom()">
-
-CREATE CUSTOM ROOM
-
+<button class="primary" onclick="saveRoom()">
+SAVE TOURNAMENT
 </button>
 
 </div>
@@ -1401,9 +1627,7 @@ CREATE CUSTOM ROOM
 </section>
 
 
-<!-- ==================================================
-EDIT ROOMS
-================================================== -->
+<!-- EDIT ROOMS -->
 
 <section id="editRooms" class="screen">
 
@@ -1412,7 +1636,7 @@ EDIT ROOMS
 <button class="back" onclick="openAdminPanel()">←</button>
 
 <div>
-<h2>Edit Rooms</h2>
+<h2>Edit Tournaments</h2>
 <p>Manage custom rooms</p>
 </div>
 
@@ -1427,35 +1651,57 @@ EDIT ROOMS
 </section>
 
 
-<!-- ==================================================
-BOTTOM NAV
-================================================== -->
+<!-- REGISTERED PLAYERS -->
 
-<div id="bottomNav" class="bottom">
+<section id="players" class="screen">
+
+<div class="header">
+
+<button class="back" onclick="openAdminPanel()">←</button>
+
+<div>
+<h2>Registered Players</h2>
+<p>All player registration records</p>
+</div>
+
+</div>
+
+<div class="section">
+
+<div class="sectionTitle">
+<h3>Player Records</h3>
+<span id="playerCount">0 PLAYERS</span>
+</div>
+
+<div id="playerList"></div>
+
+</div>
+
+</section>
+
+
+<!-- BOTTOM NAV -->
+
+<div class="bottom" id="bottomNav">
 
 <div class="nav active" onclick="goHome()">
 <div>🏠</div>
 Home
 </div>
 
-<div class="nav" onclick="showToast('Search UI coming next')">
+<div class="nav" onclick="openSearch()">
 <div>🔍</div>
 Search
 </div>
 
-<div class="nav" onclick="showToast('Choose a category above')">
-<div>🗂️</div>
-Category
-</div>
-
-<div class="nav" onclick="openCoinScreen()">
-<div>🪙</div>
-Coins
-</div>
-
-<div class="nav" onclick="showToast('My Tournament UI coming next')">
-<div>🏆</div>
+<div class="nav" onclick="openMyTournament()">
+<div>🎮</div>
 My Tournament
+</div>
+
+<div class="nav" onclick="openProfile()">
+<div>👤</div>
+Profile
 </div>
 
 </div>
@@ -1468,1239 +1714,1689 @@ My Tournament
 
 <script>
 
-/* ==================================================
-DATA
-================================================== */
+/* ================================
+   STORAGE
+================================ */
 
-let selectedMode="Solo";
-let editingRoomId=null;
-
-let rooms=
-JSON.parse(
-localStorage.getItem("zxRooms") || "[]"
+let users = JSON.parse(
+    localStorage.getItem("zx_users") || "[]"
 );
 
-let notifications=
-JSON.parse(
-localStorage.getItem("zxNotifications") || "[]"
+let rooms = JSON.parse(
+    localStorage.getItem("zx_rooms") || "[]"
 );
 
-let coinHistory=
-JSON.parse(
-localStorage.getItem("zxCoinHistory") || "[]"
+let notifications = JSON.parse(
+    localStorage.getItem("zx_notifications") || "[]"
 );
 
-
-/* ==================================================
-HELPERS
-================================================== */
-
-function saveData(){
-
-localStorage.setItem(
-"zxRooms",
-JSON.stringify(rooms)
+let coinHistory = JSON.parse(
+    localStorage.getItem("zx_coin_history") || "[]"
 );
 
-localStorage.setItem(
-"zxNotifications",
-JSON.stringify(notifications)
+let currentUser = JSON.parse(
+    localStorage.getItem("zx_current_user") || "null"
 );
 
-localStorage.setItem(
-"zxCoinHistory",
-JSON.stringify(coinHistory)
-);
+let editingRoomId = null;
 
-}
+let selectedMode = "Solo";
 
-function getCoins(){
 
-return Number(
-localStorage.getItem("zxCoins") || 0
-);
+/* ================================
+   STORAGE SAVE
+================================ */
 
-}
+function saveAll(){
 
-function setCoins(value){
+    localStorage.setItem(
+        "zx_users",
+        JSON.stringify(users)
+    );
 
-localStorage.setItem(
-"zxCoins",
-String(value)
-);
+    localStorage.setItem(
+        "zx_rooms",
+        JSON.stringify(rooms)
+    );
 
-updateCoins();
+    localStorage.setItem(
+        "zx_notifications",
+        JSON.stringify(notifications)
+    );
 
-}
-
-function updateCoins(){
-
-const value=getCoins();
-
-document.getElementById("coinBalance").textContent=value;
-
-document.getElementById("coinBalance2").textContent=value;
-
-document.getElementById("adminCoins").textContent=value;
+    localStorage.setItem(
+        "zx_coin_history",
+        JSON.stringify(coinHistory)
+    );
 
 }
 
 
-/* ==================================================
-SCREEN CONTROL
-================================================== */
-
-const ids=[
-"register",
-"login",
-"home",
-"notifications",
-"coins",
-"adminLogin",
-"adminPanel",
-"createRoom",
-"editRooms"
-];
-
-function hideAll(){
-
-ids.forEach(id=>{
-
-const el=document.getElementById(id);
-
-if(el){
-
-el.style.display="none";
-
-}
-
-});
-
-document.getElementById(
-"bottomNav"
-).style.display="none";
-
-}
+/* ================================
+   SCREEN
+================================ */
 
 function show(id){
 
-hideAll();
+    document.querySelectorAll(".auth,.screen")
+    .forEach(el=>{
+        el.style.display="none";
+    });
 
-const el=document.getElementById(id);
+    const target=document.getElementById(id);
 
-el.style.display=
-id==="register" ||
-id==="login"
-?"flex"
-:"block";
+    if(target){
 
-el.style.animation=
-"screenIn .45s ease";
+        target.style.display =
+            target.classList.contains("screen")
+            ? "block"
+            : "flex";
 
-window.scrollTo(0,0);
+    }
+
+    const auth =
+        id==="login" || id==="register";
+
+    document.getElementById("bottomNav").style.display =
+        auth ? "none" : "flex";
+
+    if(id==="home"){
+        renderRooms();
+        updateWallet();
+    }
+
+    if(id==="profileScreen"){
+        renderProfile();
+    }
+
+    if(id==="myTournament"){
+        renderMyTournaments();
+    }
+
+    if(id==="notifications"){
+        renderNotifications();
+    }
+
+    if(id==="adminPanel"){
+        updateAdminStats();
+    }
 
 }
 
 
-/* ==================================================
-REGISTER
-================================================== */
+/* ================================
+   REGISTER
+================================ */
 
 function register(){
 
-const name=
-document.getElementById("regName").value.trim();
+    const name =
+        document.getElementById("regName").value.trim();
 
-const email=
-document.getElementById("regEmail").value.trim();
+    const email =
+        document.getElementById("regEmail").value.trim();
 
-const phone=
-document.getElementById("regPhone").value.trim();
+    const phone =
+        document.getElementById("regPhone").value.trim();
 
-const pass=
-document.getElementById("regPass").value;
+    const pass =
+        document.getElementById("regPass").value;
 
-const pass2=
-document.getElementById("regPass2").value;
+    const pass2 =
+        document.getElementById("regPass2").value;
 
-if(!name||!email||!phone||!pass||!pass2){
 
-showToast("Please fill all fields");
+    if(!name || !email || !phone || !pass){
 
-return;
+        showToast("Please complete all fields");
+
+        return;
+    }
+
+
+    if(pass !== pass2){
+
+        showToast("Passwords do not match");
+
+        return;
+    }
+
+
+    const exists =
+        users.some(u =>
+            u.username.toLowerCase() === name.toLowerCase()
+            ||
+            u.email.toLowerCase() === email.toLowerCase()
+        );
+
+
+    if(exists){
+
+        showToast("Username or email already exists");
+
+        return;
+    }
+
+
+    const user={
+
+        id:Date.now(),
+
+        username:name,
+
+        email:email,
+
+        phone:phone,
+
+        password:pass,
+
+        coins:0,
+
+        joinedRooms:[],
+
+        createdAt:new Date().toLocaleString()
+
+    };
+
+
+    users.push(user);
+
+    saveAll();
+
+
+    notifications.unshift({
+
+        id:Date.now(),
+
+        title:"New player registered",
+
+        message:name+" created a ZX Esports account.",
+
+        time:new Date().toLocaleString(),
+
+        unread:true
+
+    });
+
+    saveAll();
+
+
+    showToast("Registration successful");
+
+    setTimeout(()=>{
+        show("login");
+    },700);
 
 }
 
-if(pass!==pass2){
 
-showToast("Passwords do not match");
-
-return;
-
-}
-
-if(pass.length<6){
-
-showToast("Password must be 6+ characters");
-
-return;
-
-}
-
-localStorage.setItem(
-"zxUser",
-JSON.stringify({
-name,
-email,
-phone,
-pass
-})
-);
-
-localStorage.setItem(
-"zxCoins",
-"0"
-);
-
-addNotification(
-"Welcome to ZX Esports",
-"Your account was created successfully."
-);
-
-openHome(name);
-
-}
-
-
-/* ==================================================
-LOGIN
-================================================== */
+/* ================================
+   LOGIN
+================================ */
 
 function login(){
 
-const name=
-document.getElementById("loginName").value.trim();
+    const value =
+        document.getElementById("loginName").value.trim();
 
-const pass=
-document.getElementById("loginPass").value;
-
-const user=
-JSON.parse(
-localStorage.getItem("zxUser") || "null"
-);
-
-if(!user){
-
-showToast("Please register first");
-
-return;
-
-}
-
-if(
-(name===user.name||name===user.email)
-&&
-pass===user.pass
-){
-
-const loginScreen=
-document.getElementById("login");
-
-loginScreen.style.animation=
-"screenOut .35s ease";
-
-setTimeout(()=>{
-
-openHome(user.name);
-
-},350);
-
-}else{
-
-showToast("Invalid login details");
-
-}
-
-}
+    const pass =
+        document.getElementById("loginPass").value;
 
 
-/* ==================================================
-HOME
-================================================== */
+    const user =
+        users.find(u =>
+            (
+                u.username.toLowerCase() === value.toLowerCase()
+                ||
+                u.email.toLowerCase() === value.toLowerCase()
+            )
+            &&
+            u.password === pass
+        );
 
-function openHome(name){
 
-hideAll();
+    if(!user){
 
-document.getElementById(
-"home"
-).style.display="block";
+        showToast("Invalid login details");
 
-document.getElementById(
-"home"
-).style.animation=
-"screenIn .5s ease";
+        return;
+    }
 
-document.getElementById(
-"homeName"
-).textContent=name;
 
-document.getElementById(
-"avatar"
-).textContent=
-name.substring(0,2).toUpperCase();
+    currentUser=user;
 
-document.getElementById(
-"bottomNav"
-).style.display="flex";
+    localStorage.setItem(
+        "zx_current_user",
+        JSON.stringify(user)
+    );
 
-updateCoins();
 
-renderRooms();
+    updateHome();
 
-}
+    showToast("Login successful");
 
-function goHome(){
 
-const user=
-JSON.parse(
-localStorage.getItem("zxUser") || "null"
-);
+    setTimeout(()=>{
 
-if(user){
+        show("home");
 
-openHome(user.name);
-
-}else{
-
-show("login");
-
-}
+    },450);
 
 }
 
 
-/* ==================================================
-ADMIN
-================================================== */
+/* ================================
+   LOGOUT
+================================ */
 
-function openAdmin(){
+function logout(){
 
-show("adminLogin");
+    currentUser=null;
 
-}
+    localStorage.removeItem("zx_current_user");
 
-function adminLogin(){
+    show("login");
 
-const user=
-document.getElementById("adminName").value.trim();
-
-const pass=
-document.getElementById("adminPass").value;
-
-/*
-  DEMO ADMIN AUTHENTICATION.
-  Production app should use secure server-side auth.
-*/
-
-if(
-user==="admin" &&
-pass==="demo123"
-){
-
-openAdminPanel();
-
-}else{
-
-showToast(
-"Demo admin login: admin / demo123"
-);
-
-}
-
-}
-
-function openAdminPanel(){
-
-show("adminPanel");
-
-updateAdminStats();
-
-}
-
-function updateAdminStats(){
-
-document.getElementById(
-"adminRoomCount"
-).textContent=rooms.length;
-
-document.getElementById(
-"adminNotificationCount"
-).textContent=
-notifications.length;
-
-updateCoins();
+    showToast("Logged out");
 
 }
 
 
-/* ==================================================
-CREATE ROOM
-================================================== */
+/* ================================
+   CURRENT USER SYNC
+================================ */
 
-function openCreateRoom(){
+function syncCurrentUser(){
 
-editingRoomId=null;
+    if(!currentUser) return;
 
-show("createRoom");
+    const fresh =
+        users.find(u=>u.id===currentUser.id);
 
-document.getElementById(
-"createTitle"
-).textContent=
-"Create Custom Room";
+    if(fresh){
 
-document.getElementById(
-"saveRoomButton"
-).textContent=
-"CREATE CUSTOM ROOM";
+        currentUser=fresh;
 
-clearRoomForm();
+        localStorage.setItem(
+            "zx_current_user",
+            JSON.stringify(currentUser)
+        );
 
-}
-
-function clearRoomForm(){
-
-document.getElementById("roomName").value="";
-
-document.getElementById("roomDate").value="";
-
-document.getElementById("roomTime").value="";
-
-document.getElementById("roomId").value="";
-
-document.getElementById("roomStatus").value="Upcoming";
-
-document.getElementById("imagePreview").src="";
-
-selectedMode="Solo";
-
-document
-.querySelectorAll(".mode")
-.forEach((m,i)=>{
-
-m.classList.toggle(
-"selected",
-i===0
-);
-
-});
-
-}
-
-function selectMode(el,mode){
-
-selectedMode=mode;
-
-document
-.querySelectorAll(".mode")
-.forEach(x=>
-x.classList.remove("selected")
-);
-
-el.classList.add("selected");
+    }
 
 }
 
 
-/* ==================================================
-IMAGE PREVIEW
-================================================== */
+/* ================================
+   HOME
+================================ */
 
-function previewImage(event){
+function updateHome(){
 
-const file=
-event.target.files[0];
+    syncCurrentUser();
 
-if(!file)return;
+    if(!currentUser) return;
 
-const reader=
-new FileReader();
+    const initials =
+        currentUser.username
+        .substring(0,2)
+        .toUpperCase();
 
-reader.onload=function(e){
+    document.getElementById("avatar").textContent =
+        initials;
 
-document.getElementById(
-"imagePreview"
-).src=e.target.result;
+    document.getElementById("homeName").textContent =
+        currentUser.username;
 
-};
-
-reader.readAsDataURL(file);
-
-}
-
-
-/* ==================================================
-SAVE ROOM
-================================================== */
-
-function saveRoom(){
-
-const name=
-document.getElementById(
-"roomName"
-).value.trim();
-
-const date=
-document.getElementById(
-"roomDate"
-).value;
-
-const time=
-document.getElementById(
-"roomTime"
-).value;
-
-const roomId=
-document.getElementById(
-"roomId"
-).value.trim();
-
-const status=
-document.getElementById(
-"roomStatus"
-).value;
-
-const image=
-document.getElementById(
-"imagePreview"
-).src || "";
-
-if(!name){
-
-showToast("Enter room name");
-
-return;
-
-}
-
-if(!date){
-
-showToast("Select date");
-
-return;
-
-}
-
-if(!time){
-
-showToast("Select time");
-
-return;
-
-}
-
-if(!roomId){
-
-showToast("Enter room ID");
-
-return;
+    updateWallet();
 
 }
 
 
-if(editingRoomId){
+/* ================================
+   WALLET
+================================ */
 
-const room=
-rooms.find(
-r=>r.id===editingRoomId
-);
+function updateWallet(){
 
-if(room){
+    syncCurrentUser();
 
-room.name=name;
-room.mode=selectedMode;
-room.date=date;
-room.time=time;
-room.roomId=roomId;
-room.status=status;
+    const coins =
+        currentUser ? currentUser.coins || 0 : 0;
 
-if(image){
-room.image=image;
-}
+    document.getElementById("coinBalance").textContent =
+        coins;
 
-}
+    document.getElementById("coinBalance2").textContent =
+        coins;
 
-addNotification(
-"Room updated",
-name+" was updated by admin."
-);
-
-showToast("Room updated");
-
-}else{
-
-const room={
-
-id:Date.now(),
-
-name:name,
-
-mode:selectedMode,
-
-date:date,
-
-time:time,
-
-roomId:roomId,
-
-status:status,
-
-image:image,
-
-createdAt:new Date().toLocaleString()
-
-};
-
-rooms.unshift(room);
-
-addNotification(
-"New Free Fire Battle",
-name+" has been created."
-);
-
-showToast("Custom room created");
-
-}
-
-saveData();
-
-setTimeout(
-openAdminPanel,
-600
-);
+    document.getElementById("profileCoins").textContent =
+        coins;
 
 }
 
 
-/* ==================================================
-EDIT ROOMS
-================================================== */
+/* ================================
+   ROOMS
+================================ */
 
-function openEditRooms(){
+function renderRooms(filter="All"){
 
-show("editRooms");
+    const container =
+        document.getElementById("homeRooms");
 
-renderEditRooms();
+    if(!container) return;
 
-}
+    let list=rooms;
 
-function renderEditRooms(){
 
-const box=
-document.getElementById(
-"editRoomList"
-);
+    if(filter!=="All"){
 
-box.innerHTML="";
+        list=rooms.filter(r=>r.mode===filter);
 
-if(rooms.length===0){
+    }
 
-box.innerHTML=`
-<div class="notification">
-<strong>No custom rooms</strong>
-<p>Create your first room from Admin Panel.</p>
-</div>
-`;
 
-return;
+    document.getElementById("roomCount").textContent =
+        list.length+" ROOMS";
 
-}
 
-rooms.forEach(room=>{
+    if(!list.length){
 
-const div=
-document.createElement("div");
+        container.innerHTML=`
 
-div.className="editRoom";
+        <div class="empty">
 
-div.innerHTML=`
+            <div class="emptyIcon">🏆</div>
 
-<img src="${
-room.image || 
-'data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%22480%22 height=%22200%22%3E%3Crect width=%22100%25%22 height=%22100%25%22 fill=%22%23183d29%22/%3E%3Ctext x=%2250%25%22 y=%2255%25%22 text-anchor=%22middle%22 fill=%22white%22 font-size=%2230%22%3EZX ESPORTS%3C/text%3E%3C/svg%3E'
-}">
+            <h3>No Tournament Found</h3>
 
-<div class="editBody">
+            <p>New Free Fire battles will appear here.</p>
 
-<h4>${escapeHTML(room.name)}</h4>
+        </div>
 
-<p style="
-color:#7f8b84;
-font-size:9px;
-margin-top:5px;
-">
-${room.mode} • ${room.date} • ${room.time}
-</p>
+        `;
 
-<div class="editButtons">
+        return;
+    }
 
-<button
-class="edit"
-onclick="editRoom(${room.id})">
-✏️ Edit
-</button>
 
-<button
-onclick="deleteRoom(${room.id})">
-🗑️ Delete
-</button>
-
-</div>
-
-</div>
-
-`;
-
-box.appendChild(div);
-
-});
-
-}
-
-function editRoom(id){
-
-const room=
-rooms.find(r=>r.id===id);
-
-if(!room)return;
-
-editingRoomId=id;
-
-show("createRoom");
-
-document.getElementById(
-"createTitle"
-).textContent=
-"Edit Custom Room";
-
-document.getElementById(
-"saveRoomButton"
-).textContent=
-"UPDATE CUSTOM ROOM";
-
-document.getElementById(
-"roomName"
-).value=room.name;
-
-document.getElementById(
-"roomDate"
-).value=room.date;
-
-document.getElementById(
-"roomTime"
-).value=room.time;
-
-document.getElementById(
-"roomId"
-).value=room.roomId;
-
-document.getElementById(
-"roomStatus"
-).value=room.status;
-
-document.getElementById(
-"imagePreview"
-).src=room.image || "";
-
-selectedMode=room.mode;
-
-document
-.querySelectorAll(".mode")
-.forEach(el=>{
-
-el.classList.toggle(
-"selected",
-el.textContent.includes(room.mode)
-);
-
-});
-
-}
-
-function deleteRoom(id){
-
-if(!confirm("Delete this custom room?"))return;
-
-const room=
-rooms.find(r=>r.id===id);
-
-rooms=
-rooms.filter(
-r=>r.id!==id
-);
-
-saveData();
-
-if(room){
-
-addNotification(
-"Room deleted",
-room.name+" was removed."
-);
-
-}
-
-renderEditRooms();
-
-updateAdminStats();
-
-showToast("Room deleted");
+    container.innerHTML =
+        list.map(roomCard).join("");
 
 }
 
 
-/* ==================================================
-HOME ROOMS
-================================================== */
+/* ================================
+   ROOM CARD
+================================ */
 
-function renderRooms(){
+function roomCard(room){
 
-const box=
-document.getElementById(
-"homeRooms"
-);
+    syncCurrentUser();
 
-box.innerHTML="";
+    const joined =
+        currentUser &&
+        currentUser.joinedRooms &&
+        currentUser.joinedRooms.includes(room.id);
 
-document.getElementById(
-"roomCount"
-).textContent=
-rooms.length+" ROOMS";
 
-if(rooms.length===0){
+    const thumb =
+        room.thumb ||
+        "https://images.unsplash.com/photo-1542751371-adc38448a05e?auto=format&fit=crop&w=900&q=80";
 
-box.innerHTML=`
 
-<div class="notification">
+    return `
 
-<strong>No battles available</strong>
+    <div class="tournament">
 
-<p>
-Admin can create a custom Free Fire room
-from the Admin Panel.
-</p>
+        <img
+            class="thumb"
+            src="${escapeHTML(thumb)}"
+            onerror="this.src='https://images.unsplash.com/photo-1542751371-adc38448a05e?auto=format&fit=crop&w=900&q=80'"
+        >
 
-</div>
+        <div class="tournamentBody">
 
-`;
+            <span class="badge">
+                ${escapeHTML(room.mode)}
+            </span>
 
-return;
+            <h4>
+                ${escapeHTML(room.title)}
+            </h4>
 
-}
+            <div class="roomInfo">
 
-rooms.forEach(room=>{
+                <div>
+                    ⏰ ${escapeHTML(room.time || "TBA")}
+                </div>
 
-box.appendChild(
-createRoomCard(room)
-);
+                <div>
+                    🪙 ${Number(room.entry || 0)} Coins
+                </div>
 
-});
+                <div>
+                    👥 ${room.players || 0} Joined
+                </div>
 
-}
+            </div>
 
-function createRoomCard(room){
+            <div class="prize">
+                🏆 Prize Pool: ₹${Number(room.prize || 0)}
+            </div>
 
-const div=
-document.createElement("div");
+            <button
+                class="join ${joined ? "joined" : ""}"
+                onclick="joinTournament(${room.id})"
+            >
+                ${joined ? "✓ JOINED" : "JOIN TOURNAMENT"}
+            </button>
 
-div.className="tournament";
+        </div>
 
-const fallback=
-"data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%22480%22 height=%22200%22%3E%3Crect width=%22100%25%22 height=%22100%25%22 fill=%22%23183d29%22/%3E%3Ctext x=%2250%25%22 y=%2255%25%22 text-anchor=%22middle%22 fill=%22white%22 font-size=%2230%22%3EZX ESPORTS%3C/text%3E%3C/svg%3E";
+    </div>
 
-div.innerHTML=`
-
-<img
-class="thumb"
-src="${room.image || fallback}"
-alt="Free Fire Battle">
-
-<div class="tournamentBody">
-
-<span class="badge">
-${escapeHTML(room.status)}
-</span>
-
-<h4>
-${escapeHTML(room.name)}
-</h4>
-
-<div class="roomInfo">
-
-<div>
-🎮 ${escapeHTML(room.mode)}
-</div>
-
-<div>
-📅 ${escapeHTML(room.date)}
-</div>
-
-<div>
-⏰ ${escapeHTML(room.time)}
-</div>
-
-</div>
-
-<button
-class="join"
-onclick="joinRoom(${room.id})">
-
-VIEW ROOM
-
-</button>
-
-</div>
-
-`;
-
-return div;
-
-}
-
-function joinRoom(id){
-
-const room=
-rooms.find(r=>r.id===id);
-
-if(!room)return;
-
-addNotification(
-"Room selected",
-room.name+" selected. Room ID: "+room.roomId
-);
-
-showToast(
-"Room ID: "+room.roomId
-);
+    `;
 
 }
 
 
-/* ==================================================
-FILTER
-================================================== */
+/* ================================
+   JOIN TOURNAMENT
+================================ */
 
-function filterRooms(mode){
+function joinTournament(id){
 
-if(mode==="All"){
+    syncCurrentUser();
 
-renderRooms();
+    if(!currentUser){
 
-return;
+        showToast("Please login first");
+
+        return;
+    }
+
+
+    const room =
+        rooms.find(r=>r.id===id);
+
+    if(!room) return;
+
+
+    if(currentUser.joinedRooms.includes(id)){
+
+        showToast("Already joined");
+
+        return;
+    }
+
+
+    const entry =
+        Number(room.entry || 0);
+
+
+    if((currentUser.coins || 0) < entry){
+
+        showToast(
+            "Not enough coins. Open Coin Center."
+        );
+
+        return;
+    }
+
+
+    currentUser.coins -= entry;
+
+    currentUser.joinedRooms.push(id);
+
+    room.players =
+        Number(room.players || 0) + 1;
+
+
+    users =
+        users.map(u =>
+            u.id===currentUser.id
+            ? currentUser
+            : u
+        );
+
+
+    coinHistory.unshift({
+
+        id:Date.now(),
+
+        user:currentUser.username,
+
+        amount:-entry,
+
+        text:"Joined "+room.title,
+
+        time:new Date().toLocaleString()
+
+    });
+
+
+    notifications.unshift({
+
+        id:Date.now(),
+
+        title:"Tournament joined",
+
+        message:
+            currentUser.username+
+            " joined "+
+            room.title,
+
+        time:new Date().toLocaleString(),
+
+        unread:true
+
+    });
+
+
+    saveAll();
+
+
+    localStorage.setItem(
+        "zx_current_user",
+        JSON.stringify(currentUser)
+    );
+
+
+    renderRooms();
+
+    updateWallet();
+
+    showToast("Tournament joined successfully");
 
 }
 
-const box=
-document.getElementById(
-"homeRooms"
-);
 
-box.innerHTML="";
+/* ================================
+   FILTER
+================================ */
 
-const filtered=
-rooms.filter(
-r=>r.mode===mode
-);
+function filterRooms(type){
 
-document.getElementById(
-"roomCount"
-).textContent=
-filtered.length+" "+mode;
-
-if(!filtered.length){
-
-box.innerHTML=`
-<div class="notification">
-<strong>No ${mode} rooms</strong>
-<p>No custom room is available in this category.</p>
-</div>
-`;
-
-return;
-
-}
-
-filtered.forEach(room=>{
-
-box.appendChild(
-createRoomCard(room)
-);
-
-});
+    renderRooms(type);
 
 }
 
 
-/* ==================================================
-NOTIFICATIONS
-================================================== */
+/* ================================
+   SEARCH
+================================ */
 
-function addNotification(title,text){
+function openSearch(){
 
-notifications.unshift({
+    show("search");
 
-id:Date.now(),
+    document.getElementById("searchInput").focus();
 
-title:title,
-
-text:text,
-
-time:new Date().toLocaleString(),
-
-unread:true
-
-});
-
-notifications=
-notifications.slice(0,50);
-
-saveData();
+    searchTournaments();
 
 }
+
+
+function searchTournaments(){
+
+    const value =
+        document
+        .getElementById("searchInput")
+        .value
+        .trim()
+        .toLowerCase();
+
+
+    const results =
+        rooms.filter(room =>
+            room.title
+            .toLowerCase()
+            .includes(value)
+        );
+
+
+    document.getElementById("searchCount").textContent =
+        results.length;
+
+
+    const container =
+        document.getElementById("searchResults");
+
+
+    if(!results.length){
+
+        container.innerHTML=`
+
+        <div class="empty">
+
+            <div class="emptyIcon">🔍</div>
+
+            <h3>No Tournament Found</h3>
+
+            <p>
+                Try another tournament title.
+            </p>
+
+        </div>
+
+        `;
+
+        return;
+
+    }
+
+
+    container.innerHTML =
+        results.map(roomCard).join("");
+
+}
+
+
+/* ================================
+   MY TOURNAMENT
+================================ */
+
+function openMyTournament(){
+
+    show("myTournament");
+
+    renderMyTournaments();
+
+}
+
+
+function renderMyTournaments(){
+
+    syncCurrentUser();
+
+    const container =
+        document.getElementById("myTournamentList");
+
+    if(!currentUser){
+
+        container.innerHTML=`
+
+        <div class="empty">
+
+            <div class="emptyIcon">🔐</div>
+
+            <h3>Please Login</h3>
+
+            <p>Login to view your tournaments.</p>
+
+        </div>
+
+        `;
+
+        return;
+
+    }
+
+
+    const joined =
+        rooms.filter(room =>
+            currentUser.joinedRooms.includes(room.id)
+        );
+
+
+    if(!joined.length){
+
+        container.innerHTML=`
+
+        <div class="empty">
+
+            <div class="emptyIcon">🎮</div>
+
+            <h3>0 Tournament Playing</h3>
+
+            <p>
+                You haven't joined any tournament yet.
+            </p>
+
+        </div>
+
+        `;
+
+        return;
+
+    }
+
+
+    container.innerHTML =
+        joined.map(roomCard).join("");
+
+}
+
+
+/* ================================
+   PROFILE
+================================ */
+
+function openProfile(){
+
+    if(!currentUser){
+
+        show("login");
+
+        return;
+    }
+
+    show("profileScreen");
+
+    renderProfile();
+
+}
+
+
+function renderProfile(){
+
+    syncCurrentUser();
+
+    if(!currentUser) return;
+
+
+    const initials =
+        currentUser.username
+        .substring(0,2)
+        .toUpperCase();
+
+
+    document.getElementById("profileAvatar").textContent =
+        initials;
+
+    document.getElementById("profileName").textContent =
+        currentUser.username;
+
+    document.getElementById("profileUsername").textContent =
+        currentUser.username;
+
+    document.getElementById("profileEmail").textContent =
+        currentUser.email;
+
+    document.getElementById("profilePhone").textContent =
+        currentUser.phone;
+
+    document.getElementById("profileTournaments").textContent =
+        currentUser.joinedRooms.length;
+
+    document.getElementById("profileCoins").textContent =
+        currentUser.coins || 0;
+
+}
+
+
+/* ================================
+   NOTIFICATIONS
+================================ */
 
 function openNotifications(){
 
-show("notifications");
+    show("notifications");
 
-renderNotifications();
+    renderNotifications();
 
 }
+
 
 function renderNotifications(){
 
-const box=
-document.getElementById(
-"notificationList"
-);
+    const container =
+        document.getElementById("notificationList");
 
-box.innerHTML="";
 
-if(!notifications.length){
+    if(!notifications.length){
 
-box.innerHTML=`
-<div class="notification">
-<strong>No notifications</strong>
-<p>You are all caught up.</p>
-</div>
-`;
+        container.innerHTML=`
 
-return;
+        <div class="empty">
+
+            <div class="emptyIcon">🔔</div>
+
+            <h3>No Notifications</h3>
+
+            <p>You are all caught up.</p>
+
+        </div>
+
+        `;
+
+        return;
+
+    }
+
+
+    container.innerHTML =
+        notifications.map(n=>`
+
+        <div class="notification ${n.unread ? "unread":""}">
+
+            <strong>
+                ${escapeHTML(n.title)}
+            </strong>
+
+            <p>
+                ${escapeHTML(n.message)}
+            </p>
+
+            <p>
+                ${escapeHTML(n.time)}
+            </p>
+
+        </div>
+
+        `).join("");
+
+
+    notifications =
+        notifications.map(n=>({
+            ...n,
+            unread:false
+        }));
+
+
+    saveAll();
 
 }
 
-notifications.forEach(n=>{
 
-const div=
-document.createElement("div");
+/* ================================
+   ADMIN
+================================ */
 
-div.className=
-"notification "+
-(n.unread?"unread":"");
+function openAdmin(){
 
-div.innerHTML=`
+    show("adminLogin");
 
-<strong>
-${escapeHTML(n.title)}
-</strong>
+}
 
-<p>
-${escapeHTML(n.text)}
-</p>
 
-<p style="margin-top:6px;font-size:8px;">
-${escapeHTML(n.time)}
-</p>
+function adminLogin(){
 
-`;
+    const username =
+        document.getElementById("adminName").value.trim();
 
-box.appendChild(div);
+    const password =
+        document.getElementById("adminPass").value;
 
-n.unread=false;
+
+    /*
+       Demo admin credentials.
+       Change these before real deployment.
+    */
+
+    if(
+        username === "admin"
+        &&
+        password === "rajazx123"
+    ){
+
+        openAdminPanel();
+
+    }else{
+
+        showToast("Invalid admin credentials");
+
+    }
+
+}
+
+
+function openAdminPanel(){
+
+    show("adminPanel");
+
+    updateAdminStats();
+
+}
+
+
+function updateAdminStats(){
+
+    document.getElementById("adminRoomCount").textContent =
+        rooms.length;
+
+    document.getElementById("adminUsers").textContent =
+        users.length;
+
+    document.getElementById("adminNotificationCount").textContent =
+        notifications.length;
+
+    const totalCoins =
+        users.reduce(
+            (sum,u)=>sum+Number(u.coins||0),
+            0
+        );
+
+    document.getElementById("adminCoins").textContent =
+        totalCoins;
+
+}
+
+
+/* ================================
+   CREATE ROOM
+================================ */
+
+function openCreateRoom(){
+
+    editingRoomId=null;
+
+    document.getElementById("roomFormTitle").textContent =
+        "Create Tournament";
+
+    clearRoomForm();
+
+    show("createRoom");
+
+}
+
+
+function selectMode(el){
+
+    document
+    .querySelectorAll(".mode")
+    .forEach(m=>m.classList.remove("selected"));
+
+    el.classList.add("selected");
+
+    selectedMode =
+        el.dataset.mode;
+
+}
+
+
+function saveRoom(){
+
+    const title =
+        document.getElementById("roomTitle").value.trim();
+
+    const thumb =
+        document.getElementById("roomThumb").value.trim();
+
+    const time =
+        document.getElementById("roomTime").value;
+
+    const prize =
+        document.getElementById("roomPrize").value;
+
+    const entry =
+        document.getElementById("roomEntry").value;
+
+    const roomId =
+        document.getElementById("roomId").value.trim();
+
+    const roomPassword =
+        document.getElementById("roomPassword").value.trim();
+
+
+    if(!title){
+
+        showToast("Tournament title required");
+
+        return;
+
+    }
+
+
+    if(editingRoomId){
+
+        const room =
+            rooms.find(r=>r.id===editingRoomId);
+
+        if(room){
+
+            room.title=title;
+
+            room.thumb=thumb;
+
+            room.mode=selectedMode;
+
+            room.time=time;
+
+            room.prize=Number(prize||0);
+
+            room.entry=Number(entry||0);
+
+            room.roomId=roomId;
+
+            room.roomPassword=roomPassword;
+
+        }
+
+        showToast("Tournament updated");
+
+    }else{
+
+        const room={
+
+            id:Date.now(),
+
+            title:title,
+
+            thumb:thumb,
+
+            mode:selectedMode,
+
+            time:time,
+
+            prize:Number(prize||0),
+
+            entry:Number(entry||0),
+
+            roomId:roomId,
+
+            roomPassword:roomPassword,
+
+            players:0,
+
+            createdAt:new Date().toLocaleString()
+
+        };
+
+
+        rooms.unshift(room);
+
+
+        notifications.unshift({
+
+            id:Date.now(),
+
+            title:"New tournament available",
+
+            message:
+                title+
+                " has been created.",
+
+            time:new Date().toLocaleString(),
+
+            unread:true
+
+        });
+
+
+        showToast("Tournament created");
+
+    }
+
+
+    saveAll();
+
+    clearRoomForm();
+
+    openAdminPanel();
+
+}
+
+
+/* ================================
+   CLEAR FORM
+================================ */
+
+function clearRoomForm(){
+
+    document.getElementById("roomTitle").value="";
+
+    document.getElementById("roomThumb").value="";
+
+    document.getElementById("roomTime").value="";
+
+    document.getElementById("roomPrize").value="";
+
+    document.getElementById("roomEntry").value="";
+
+    document.getElementById("roomId").value="";
+
+    document.getElementById("roomPassword").value="";
+
+    document.getElementById("thumbPreview").src="";
+
+    selectedMode="Solo";
+
+    document
+    .querySelectorAll(".mode")
+    .forEach(m=>m.classList.remove("selected"));
+
+    const first =
+        document.querySelector(".mode[data-mode='Solo']");
+
+    if(first)
+        first.classList.add("selected");
+
+}
+
+
+/* ================================
+   THUMB PREVIEW
+================================ */
+
+document
+.getElementById("roomThumb")
+.addEventListener("input",function(){
+
+    const url=this.value.trim();
+
+    document
+    .getElementById("thumbPreview")
+    .src=url;
 
 });
 
-saveData();
+
+/* ================================
+   EDIT ROOMS
+================================ */
+
+function openEditRooms(){
+
+    show("editRooms");
+
+    renderEditRooms();
 
 }
 
 
-/* ==================================================
-COINS
-================================================== */
+function renderEditRooms(){
+
+    const container =
+        document.getElementById("editRoomList");
+
+
+    if(!rooms.length){
+
+        container.innerHTML=`
+
+        <div class="empty">
+
+            <div class="emptyIcon">🏆</div>
+
+            <h3>No Tournaments</h3>
+
+            <p>Create your first custom room.</p>
+
+        </div>
+
+        `;
+
+        return;
+
+    }
+
+
+    container.innerHTML =
+        rooms.map(room=>`
+
+        <div class="editRoom">
+
+            <img
+                src="${escapeHTML(
+                    room.thumb ||
+                    "https://images.unsplash.com/photo-1542751371-adc38448a05e?auto=format&fit=crop&w=900&q=80"
+                )}"
+            >
+
+            <div class="editBody">
+
+                <h4>
+                    ${escapeHTML(room.title)}
+                </h4>
+
+                <div class="editPrize">
+                    🏆 Prize Pool: ₹${Number(room.prize||0)}
+                </div>
+
+                <div class="editPrize">
+                    🎮 ${escapeHTML(room.mode)}
+                    ·
+                    👥 ${room.players||0} Players
+                </div>
+
+                <div class="editButtons">
+
+                    <button
+                        class="edit"
+                        onclick="editRoom(${room.id})"
+                    >
+                        ✏️ Edit
+                    </button>
+
+                    <button
+                        class="delete"
+                        onclick="deleteRoom(${room.id})"
+                    >
+                        🗑 Delete
+                    </button>
+
+                </div>
+
+            </div>
+
+        </div>
+
+        `).join("");
+
+}
+
+
+/* ================================
+   EDIT ROOM
+================================ */
+
+function editRoom(id){
+
+    const room =
+        rooms.find(r=>r.id===id);
+
+    if(!room) return;
+
+
+    editingRoomId=id;
+
+
+    document.getElementById("roomFormTitle").textContent =
+        "Edit Tournament";
+
+
+    document.getElementById("roomTitle").value =
+        room.title || "";
+
+    document.getElementById("roomThumb").value =
+        room.thumb || "";
+
+    document.getElementById("roomTime").value =
+        room.time || "";
+
+    document.getElementById("roomPrize").value =
+        room.prize || "";
+
+    document.getElementById("roomEntry").value =
+        room.entry || "";
+
+    document.getElementById("roomId").value =
+        room.roomId || "";
+
+    document.getElementById("roomPassword").value =
+        room.roomPassword || "";
+
+
+    selectedMode =
+        room.mode || "Solo";
+
+
+    document
+    .querySelectorAll(".mode")
+    .forEach(m=>{
+
+        m.classList.toggle(
+            "selected",
+            m.dataset.mode===selectedMode
+        );
+
+    });
+
+
+    document.getElementById("thumbPreview").src =
+        room.thumb || "";
+
+
+    show("createRoom");
+
+}
+
+
+function deleteRoom(id){
+
+    const room =
+        rooms.find(r=>r.id===id);
+
+    if(!room) return;
+
+
+    if(!confirm(
+        "Delete "+room.title+"?"
+    )) return;
+
+
+    rooms =
+        rooms.filter(r=>r.id!==id);
+
+
+    users =
+        users.map(u=>({
+
+            ...u,
+
+            joinedRooms:
+                (u.joinedRooms||[])
+                .filter(roomId=>roomId!==id)
+
+        }));
+
+
+    saveAll();
+
+    renderEditRooms();
+
+    showToast("Tournament deleted");
+
+}
+
+
+/* ================================
+   REGISTERED PLAYERS
+================================ */
+
+function openPlayers(){
+
+    show("players");
+
+    renderPlayers();
+
+}
+
+
+function renderPlayers(){
+
+    const container =
+        document.getElementById("playerList");
+
+
+    document.getElementById("playerCount").textContent =
+        users.length+" PLAYERS";
+
+
+    if(!users.length){
+
+        container.innerHTML=`
+
+        <div class="empty">
+
+            <div class="emptyIcon">👥</div>
+
+            <h3>No Registered Players</h3>
+
+            <p>Players will appear here after registration.</p>
+
+        </div>
+
+        `;
+
+        return;
+
+    }
+
+
+    container.innerHTML =
+        users.map(user=>`
+
+        <div class="playerCard">
+
+            <div class="playerTop">
+
+                <div class="playerAvatar">
+                    ${escapeHTML(
+                        user.username
+                        .substring(0,2)
+                        .toUpperCase()
+                    )}
+                </div>
+
+                <div>
+
+                    <strong>
+                        ${escapeHTML(user.username)}
+                    </strong>
+
+                    <small>
+                        Registered:
+                        ${escapeHTML(user.createdAt)}
+                    </small>
+
+                </div>
+
+            </div>
+
+
+            <div class="playerDetails">
+
+                <p>
+                    📧 Email:
+                    <b>${escapeHTML(user.email)}</b>
+                </p>
+
+                <p>
+                    📱 Phone:
+                    <b>${escapeHTML(user.phone)}</b>
+                </p>
+
+                <p>
+                    🎮 Tournaments:
+                    <b>${(user.joinedRooms||[]).length}</b>
+                </p>
+
+                <p>
+                    🪙 Coins:
+                    <b>${Number(user.coins||0)}</b>
+                </p>
+
+            </div>
+
+        </div>
+
+        `).join("");
+
+}
+
+
+/* ================================
+   COIN CENTER
+================================ */
 
 function openCoinScreen(){
 
-show("coins");
+    show("coins");
 
-updateCoins();
+    updateWallet();
 
-renderCoinHistory();
+    renderCoinHistory();
 
 }
+
 
 function renderCoinHistory(){
 
-const box=
-document.getElementById(
-"coinHistory"
-);
-
-box.innerHTML="";
-
-if(!coinHistory.length){
-
-box.innerHTML=`
-<div class="notification">
-<strong>No coin activity</strong>
-<p>Your prototype coin history will appear here.</p>
-</div>
-`;
-
-return;
-
-}
-
-coinHistory.forEach(item=>{
-
-const div=
-document.createElement("div");
-
-div.className="notification";
-
-div.innerHTML=`
-
-<strong>
-🪙 ${escapeHTML(item.title)}
-</strong>
-
-<p>
-${escapeHTML(item.text)}
-</p>
-
-`;
-
-box.appendChild(div);
-
-});
-
-}
+    const container =
+        document.getElementById("coinHistory");
 
 
-/*
-  Prototype-only coin credit.
-  No real payment processing.
-*/
+    const own =
+        currentUser
+        ? coinHistory.filter(
+            x=>x.user===currentUser.username
+        )
+        : [];
 
-function demoCoinCredit(amount){
 
-amount=Number(amount);
+    if(!own.length){
 
-if(!amount || amount<=0){
+        container.innerHTML=`
 
-showToast("Enter a valid amount");
+        <div class="empty">
 
-return;
+            <div class="emptyIcon">🪙</div>
 
-}
+            <h3>No Coin Activity</h3>
 
-const newBalance=
-getCoins()+amount;
+            <p>Your coin activity will appear here.</p>
 
-setCoins(newBalance);
+        </div>
 
-coinHistory.unshift({
+        `;
 
-title:"Prototype Coin Credit",
+        return;
 
-text:"+"+
-amount+
-" Gold FF Coins • Test mode"
+    }
 
-});
 
-addNotification(
-"Coins credited",
-amount+
-" prototype Gold FF Coins added."
-);
+    container.innerHTML =
+        own.map(x=>`
 
-saveData();
+        <div class="notification">
 
-renderCoinHistory();
+            <strong>
+                ${escapeHTML(x.text)}
+            </strong>
 
-showToast(
-amount+" Coins added in test mode"
-);
+            <p>
+                ${x.amount > 0 ? "+" : ""}
+                ${x.amount} Coins
+            </p>
+
+            <p>
+                ${escapeHTML(x.time)}
+            </p>
+
+        </div>
+
+        `).join("");
 
 }
 
 
-/* ==================================================
-ESCAPE HTML
-================================================== */
+/* ================================
+   HOME
+================================ */
 
-function escapeHTML(text){
+function goHome(){
 
-return String(text)
-.replaceAll("&","&amp;")
-.replaceAll("<","&lt;")
-.replaceAll(">","&gt;")
-.replaceAll('"',"&quot;")
-.replaceAll("'","&#039;");
+    if(!currentUser){
+
+        show("login");
+
+        return;
+
+    }
+
+    show("home");
+
+    updateHome();
 
 }
 
 
-/* ==================================================
-TOAST
-================================================== */
+/* ================================
+   TOAST
+================================ */
 
 let toastTimer;
 
 function showToast(message){
 
-const toast=
-document.getElementById("toast");
+    const toast =
+        document.getElementById("toast");
 
-toast.textContent=message;
+    toast.textContent=message;
 
-toast.classList.add("show");
+    toast.classList.add("show");
 
-clearTimeout(toastTimer);
 
-toastTimer=
-setTimeout(()=>{
+    clearTimeout(toastTimer);
 
-toast.classList.remove("show");
 
-},2300);
+    toastTimer =
+        setTimeout(()=>{
+
+            toast.classList.remove("show");
+
+        },2200);
 
 }
 
 
-/* ==================================================
-INITIAL LOAD
-================================================== */
+/* ================================
+   ESCAPE HTML
+================================ */
 
-window.addEventListener("load",()=>{
+function escapeHTML(value){
 
-hideAll();
+    return String(value ?? "")
+    .replace(/&/g,"&amp;")
+    .replace(/</g,"&lt;")
+    .replace(/>/g,"&gt;")
+    .replace(/"/g,"&quot;")
+    .replace(/'/g,"&#039;");
 
-show("register");
+}
 
-updateCoins();
 
-});
+/* ================================
+   DEMO DATA
+================================ */
+
+function createDemoRooms(){
+
+    if(rooms.length) return;
+
+
+    rooms=[
+
+        {
+            id:1001,
+            title:"ZX Night Battle",
+            thumb:"https://images.unsplash.com/photo-1542751371-adc38448a05e?auto=format&fit=crop&w=900&q=80",
+            mode:"Squad",
+            time:"",
+            prize:1000,
+            entry:20,
+            roomId:"ZX1001",
+            roomPassword:"ZX123",
+            players:0,
+            createdAt:new Date().toLocaleString()
+        },
+
+        {
+            id:1002,
+            title:"Free Fire Solo King",
+            thumb:"https://images.unsplash.com/photo-1511512578047-dfb367046420?auto=format&fit=crop&w=900&q=80",
+            mode:"Solo",
+            time:"",
+            prize:500,
+            entry:10,
+            roomId:"ZX1002",
+            roomPassword:"ZX456",
+            players:0,
+            createdAt:new Date().toLocaleString()
+        }
+
+    ];
+
+
+    saveAll();
+
+}
+
+
+/* ================================
+   START APP
+================================ */
+
+createDemoRooms();
+
+
+if(currentUser){
+
+    syncCurrentUser();
+
+    updateHome();
+
+    show("home");
+
+}else{
+
+    show("register");
+
+}
 
 </script>
 
