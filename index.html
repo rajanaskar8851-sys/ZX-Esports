@@ -1,0 +1,2708 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>ZX Esports V2</title>
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial,Helvetica,sans-serif;
+}
+
+:root{
+    --green:#39d98a;
+    --green2:#18a968;
+    --dark:#070b09;
+    --card:#101713;
+    --card2:#141c17;
+    --border:#26352d;
+    --muted:#7d8982;
+    --gold:#f6c945;
+}
+
+body{
+    background:#020403;
+    color:white;
+}
+
+button,input,select{
+    font:inherit;
+}
+
+button{
+    cursor:pointer;
+}
+
+.app{
+    width:100%;
+    max-width:480px;
+    min-height:100vh;
+    margin:auto;
+    background:#080d0a;
+    position:relative;
+    overflow:hidden;
+}
+
+
+/* =========================
+   AUTH
+========================= */
+
+.auth{
+    min-height:100vh;
+    padding:25px 20px;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    background:
+        radial-gradient(circle at 50% 0,#16472f 0,#09100c 38%,#050706 75%);
+}
+
+.logo{
+    text-align:center;
+    margin-bottom:28px;
+    animation:logoIn .7s ease;
+}
+
+.logoBox{
+    width:76px;
+    height:76px;
+    margin:auto;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    border-radius:23px;
+    background:var(--green);
+    color:#06100a;
+    font-size:27px;
+    font-weight:900;
+    box-shadow:0 0 40px rgba(57,217,138,.4);
+}
+
+.logo h1{
+    margin-top:14px;
+    letter-spacing:2px;
+    font-size:29px;
+}
+
+.logo p{
+    color:#72dca3;
+    font-size:11px;
+    margin-top:5px;
+}
+
+.authCard{
+    padding:22px;
+    border-radius:23px;
+    background:rgba(15,23,18,.96);
+    border:1px solid rgba(57,217,138,.2);
+    box-shadow:0 20px 60px rgba(0,0,0,.45);
+    animation:cardIn .7s ease;
+}
+
+.authCard h2{
+    font-size:24px;
+}
+
+.sub{
+    color:var(--muted);
+    font-size:12px;
+    margin:7px 0 20px;
+}
+
+.field{
+    margin-bottom:13px;
+}
+
+.field label{
+    display:block;
+    font-size:11px;
+    color:#9ba69f;
+    margin-bottom:6px;
+}
+
+.input{
+    width:100%;
+    padding:13px;
+    border-radius:12px;
+    border:1px solid #243129;
+    background:#090e0b;
+    color:white;
+    outline:none;
+}
+
+.input:focus{
+    border-color:var(--green);
+    box-shadow:0 0 12px rgba(57,217,138,.12);
+}
+
+.primary{
+    width:100%;
+    border:0;
+    padding:14px;
+    border-radius:13px;
+    margin-top:5px;
+    background:linear-gradient(135deg,var(--green),var(--green2));
+    color:#041009;
+    font-weight:900;
+}
+
+.switch{
+    text-align:center;
+    margin-top:17px;
+    color:var(--muted);
+    font-size:12px;
+}
+
+.switch b{
+    color:var(--green);
+    cursor:pointer;
+}
+
+
+/* =========================
+   SCREEN
+========================= */
+
+.screen{
+    display:none;
+    min-height:100vh;
+    padding-bottom:82px;
+    animation:screenIn .45s ease;
+}
+
+.header{
+    padding:19px 17px;
+    display:flex;
+    align-items:center;
+    gap:12px;
+}
+
+.back{
+    width:42px;
+    height:42px;
+    border-radius:13px;
+    background:#111914;
+    border:1px solid var(--border);
+    color:var(--green);
+    font-size:20px;
+}
+
+.header h2{
+    font-size:20px;
+}
+
+.header p{
+    color:var(--muted);
+    font-size:10px;
+    margin-top:4px;
+}
+
+
+/* =========================
+   HOME
+========================= */
+
+#home{
+    padding-bottom:80px;
+}
+
+.top{
+    padding:18px;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+}
+
+.profile{
+    display:flex;
+    gap:10px;
+    align-items:center;
+}
+
+.avatar{
+    width:45px;
+    height:45px;
+    border-radius:14px;
+    background:var(--green);
+    color:#06100a;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-weight:900;
+}
+
+.welcome small{
+    color:var(--muted);
+    font-size:10px;
+}
+
+.welcome strong{
+    display:block;
+    margin-top:3px;
+}
+
+.actions{
+    display:flex;
+    gap:7px;
+}
+
+.iconBtn{
+    width:41px;
+    height:41px;
+    border-radius:12px;
+    border:1px solid var(--border);
+    background:#111813;
+    color:white;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+}
+
+.adminBtn{
+    color:var(--green);
+}
+
+
+/* =========================
+   COIN WALLET
+========================= */
+
+.wallet{
+    margin:3px 17px 15px;
+    padding:18px;
+    border-radius:21px;
+    background:linear-gradient(135deg,#153d29,#0d1711);
+    border:1px solid rgba(57,217,138,.25);
+}
+
+.walletTop{
+    display:flex;
+    justify-content:space-between;
+    color:#8b9991;
+    font-size:10px;
+}
+
+.coinBalance{
+    display:flex;
+    align-items:center;
+    gap:10px;
+    margin:11px 0 15px;
+}
+
+.coin{
+    width:46px;
+    height:46px;
+    border-radius:50%;
+    background:linear-gradient(145deg,#ffe36c,#d99c15);
+    border:3px solid #f7d44c;
+    color:#654400;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-size:18px;
+    font-weight:900;
+    box-shadow:0 4px 15px rgba(246,201,69,.25);
+}
+
+.coinBalance strong{
+    font-size:27px;
+}
+
+.coinBalance small{
+    display:block;
+    color:#8c9891;
+    font-size:10px;
+}
+
+.walletBtns{
+    display:flex;
+    gap:8px;
+}
+
+.walletBtns button{
+    flex:1;
+    padding:10px;
+    border-radius:10px;
+    border:1px solid #31503e;
+    background:#0b1510;
+    color:#7ee7ae;
+}
+
+
+/* =========================
+   SECTION
+========================= */
+
+.section{
+    padding:12px 17px;
+}
+
+.sectionTitle{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    margin-bottom:12px;
+}
+
+.sectionTitle h3{
+    font-size:16px;
+}
+
+.sectionTitle span{
+    color:var(--green);
+    font-size:10px;
+}
+
+
+/* =========================
+   CATEGORIES
+========================= */
+
+.categories{
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:9px;
+}
+
+.category{
+    padding:13px 4px;
+    border-radius:15px;
+    background:#101712;
+    border:1px solid #202d25;
+    text-align:center;
+    cursor:pointer;
+}
+
+.categoryIcon{
+    font-size:22px;
+    margin-bottom:6px;
+}
+
+.category small{
+    color:#aab3ae;
+    font-size:9px;
+}
+
+
+/* =========================
+   TOURNAMENT CARDS
+========================= */
+
+.tournaments{
+    display:flex;
+    flex-direction:column;
+    gap:12px;
+}
+
+.tournament{
+    background:#101712;
+    border:1px solid #233128;
+    border-radius:18px;
+    overflow:hidden;
+}
+
+.thumb{
+    width:100%;
+    height:145px;
+    object-fit:cover;
+    background:
+        linear-gradient(135deg,#173d29,#08100c);
+    display:block;
+}
+
+.tournamentBody{
+    padding:14px;
+}
+
+.badge{
+    display:inline-block;
+    padding:5px 8px;
+    border-radius:7px;
+    background:rgba(57,217,138,.12);
+    color:var(--green);
+    font-size:9px;
+    font-weight:bold;
+}
+
+.tournament h4{
+    margin:8px 0;
+    font-size:16px;
+}
+
+.roomInfo{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:6px;
+    color:#88938d;
+    font-size:9px;
+}
+
+.roomInfo div{
+    padding:8px;
+    background:#0b110d;
+    border-radius:8px;
+}
+
+.join{
+    width:100%;
+    margin-top:10px;
+    padding:10px;
+    border:0;
+    border-radius:10px;
+    background:var(--green);
+    color:#06100a;
+    font-weight:900;
+}
+
+
+/* =========================
+   NOTIFICATIONS
+========================= */
+
+.notification{
+    padding:13px;
+    border-radius:13px;
+    background:#101712;
+    border:1px solid #233128;
+    margin-bottom:8px;
+}
+
+.notification strong{
+    font-size:12px;
+}
+
+.notification p{
+    color:#7e8983;
+    font-size:10px;
+    margin-top:4px;
+}
+
+.notification.unread{
+    border-color:rgba(57,217,138,.45);
+}
+
+
+/* =========================
+   ADMIN
+========================= */
+
+.adminGrid{
+    padding:0 17px;
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:10px;
+}
+
+.stat{
+    padding:16px;
+    background:#101712;
+    border:1px solid #233128;
+    border-radius:16px;
+}
+
+.stat span{
+    color:var(--muted);
+    font-size:9px;
+}
+
+.stat strong{
+    display:block;
+    color:var(--green);
+    font-size:22px;
+    margin-top:7px;
+}
+
+.adminMenu{
+    padding:17px;
+}
+
+.adminOption{
+    padding:15px;
+    display:flex;
+    gap:13px;
+    align-items:center;
+    background:#101712;
+    border:1px solid #233128;
+    border-radius:15px;
+    margin-bottom:10px;
+    cursor:pointer;
+}
+
+.adminOptionIcon{
+    width:43px;
+    height:43px;
+    border-radius:12px;
+    background:#17251c;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-size:19px;
+}
+
+.adminOption h4{
+    font-size:13px;
+}
+
+.adminOption p{
+    color:var(--muted);
+    font-size:9px;
+    margin-top:4px;
+}
+
+
+/* =========================
+   CREATE ROOM
+========================= */
+
+.formBox{
+    margin:0 17px;
+    padding:18px;
+    border-radius:19px;
+    background:#101712;
+    border:1px solid #233128;
+}
+
+.formField{
+    margin-bottom:14px;
+}
+
+.formField label{
+    display:block;
+    color:#9da8a1;
+    font-size:10px;
+    margin-bottom:6px;
+}
+
+.formField input,
+.formField select{
+    width:100%;
+    padding:12px;
+    border-radius:11px;
+    border:1px solid #26352d;
+    background:#080d0a;
+    color:white;
+    outline:none;
+}
+
+.modes{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:7px;
+}
+
+.mode{
+    padding:11px 4px;
+    text-align:center;
+    border-radius:10px;
+    background:#0a100c;
+    border:1px solid #26352d;
+    color:#9aa59f;
+    cursor:pointer;
+    font-size:11px;
+}
+
+.mode.selected{
+    border-color:var(--green);
+    background:rgba(57,217,138,.1);
+    color:var(--green);
+}
+
+.preview{
+    width:100%;
+    height:150px;
+    object-fit:cover;
+    border-radius:13px;
+    background:#080d0a;
+    border:1px dashed #314137;
+    margin-top:5px;
+}
+
+
+/* =========================
+   EDIT ROOM
+========================= */
+
+.editRoom{
+    background:#101712;
+    border:1px solid #233128;
+    border-radius:16px;
+    overflow:hidden;
+    margin-bottom:11px;
+}
+
+.editRoom img{
+    width:100%;
+    height:110px;
+    object-fit:cover;
+}
+
+.editBody{
+    padding:13px;
+}
+
+.editBody h4{
+    font-size:13px;
+}
+
+.editButtons{
+    display:flex;
+    gap:7px;
+    margin-top:10px;
+}
+
+.editButtons button{
+    flex:1;
+    padding:9px;
+    border-radius:9px;
+    border:1px solid #304138;
+    background:#0b110d;
+    color:#9da9a2;
+}
+
+.editButtons .edit{
+    color:var(--green);
+}
+
+
+/* =========================
+   PAYMENT / COIN
+========================= */
+
+.coinBox{
+    margin:0 17px;
+    padding:20px;
+    text-align:center;
+    border-radius:20px;
+    background:linear-gradient(135deg,#1b3525,#101712);
+    border:1px solid rgba(57,217,138,.2);
+}
+
+.bigCoin{
+    width:75px;
+    height:75px;
+    margin:auto;
+    border-radius:50%;
+    background:linear-gradient(145deg,#ffe66f,#d99d17);
+    border:4px solid #f5d044;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    color:#674600;
+    font-weight:900;
+    font-size:28px;
+}
+
+.coinBox h3{
+    margin:12px 0 5px;
+}
+
+.coinBox p{
+    color:#87938b;
+    font-size:10px;
+    line-height:1.5;
+}
+
+.demo{
+    display:inline-block;
+    margin-top:10px;
+    padding:5px 8px;
+    border-radius:6px;
+    background:#1b261f;
+    color:#f0c83d;
+    font-size:9px;
+}
+
+
+/* =========================
+   BOTTOM NAV
+========================= */
+
+.bottom{
+    position:fixed;
+    bottom:0;
+    left:50%;
+    transform:translateX(-50%);
+    width:100%;
+    max-width:480px;
+    height:70px;
+    display:none;
+    justify-content:space-around;
+    align-items:center;
+    background:rgba(7,11,9,.97);
+    border-top:1px solid #202c25;
+    z-index:50;
+}
+
+.nav{
+    text-align:center;
+    color:#69756e;
+    font-size:8px;
+    cursor:pointer;
+}
+
+.nav div{
+    font-size:19px;
+    margin-bottom:4px;
+}
+
+.nav.active{
+    color:var(--green);
+}
+
+
+/* =========================
+   TOAST
+========================= */
+
+.toast{
+    position:fixed;
+    z-index:100;
+    bottom:85px;
+    left:50%;
+    transform:translate(-50%,20px);
+    opacity:0;
+    pointer-events:none;
+    padding:11px 15px;
+    border-radius:11px;
+    background:#17231b;
+    border:1px solid var(--green);
+    font-size:11px;
+    white-space:nowrap;
+    transition:.3s;
+}
+
+.toast.show{
+    opacity:1;
+    transform:translate(-50%,0);
+}
+
+
+/* =========================
+   ANIMATIONS
+========================= */
+
+@keyframes logoIn{
+    from{
+        opacity:0;
+        transform:translateY(-25px) scale(.9);
+    }
+    to{
+        opacity:1;
+        transform:none;
+    }
+}
+
+@keyframes cardIn{
+    from{
+        opacity:0;
+        transform:translateY(35px);
+    }
+    to{
+        opacity:1;
+        transform:none;
+    }
+}
+
+@keyframes screenIn{
+    from{
+        opacity:0;
+        transform:translateX(25px);
+    }
+    to{
+        opacity:1;
+        transform:none;
+    }
+}
+
+@keyframes screenOut{
+    from{
+        opacity:1;
+        transform:none;
+    }
+    to{
+        opacity:0;
+        transform:translateX(-25px);
+    }
+}
+</style>
+</head>
+
+<body>
+
+<div class="app">
+
+
+<!-- ==================================================
+REGISTER
+================================================== -->
+
+<section id="register" class="auth">
+
+<div class="logo">
+    <div class="logoBox">ZX</div>
+    <h1>ZX ESPORTS</h1>
+    <p>FREE FIRE TOURNAMENT PLATFORM</p>
+</div>
+
+<div class="authCard">
+
+<h2>Create Account</h2>
+<p class="sub">Create your ZX Esports account</p>
+
+<div class="field">
+<label>Username</label>
+<input class="input" id="regName" placeholder="Enter username">
+</div>
+
+<div class="field">
+<label>Email</label>
+<input class="input" id="regEmail" type="email" placeholder="Enter email">
+</div>
+
+<div class="field">
+<label>Phone Number</label>
+<input class="input" id="regPhone" placeholder="Enter phone number">
+</div>
+
+<div class="field">
+<label>Password</label>
+<input class="input" id="regPass" type="password" placeholder="Create password">
+</div>
+
+<div class="field">
+<label>Re-enter Password</label>
+<input class="input" id="regPass2" type="password" placeholder="Re-enter password">
+</div>
+
+<button class="primary" onclick="register()">REGISTER NOW</button>
+
+<div class="switch">
+Already registered?
+<b onclick="show('login')">Login</b>
+</div>
+
+</div>
+</section>
+
+
+<!-- ==================================================
+LOGIN
+================================================== -->
+
+<section id="login" class="auth" style="display:none">
+
+<div class="logo">
+    <div class="logoBox">ZX</div>
+    <h1>ZX ESPORTS</h1>
+    <p>FREE FIRE TOURNAMENT PLATFORM</p>
+</div>
+
+<div class="authCard">
+
+<h2>Welcome Back</h2>
+<p class="sub">Login to continue</p>
+
+<div class="field">
+<label>Username / Email</label>
+<input class="input" id="loginName" placeholder="Username or email">
+</div>
+
+<div class="field">
+<label>Password</label>
+<input class="input" id="loginPass" type="password" placeholder="Password">
+</div>
+
+<button class="primary" onclick="login()">LOGIN</button>
+
+<div class="switch">
+Don't have an account?
+<b onclick="show('register')">Register</b>
+</div>
+
+</div>
+</section>
+
+
+<!-- ==================================================
+HOME
+================================================== -->
+
+<section id="home" class="screen">
+
+<div class="top">
+
+<div class="profile">
+<div class="avatar" id="avatar">ZX</div>
+
+<div class="welcome">
+<small>Welcome back 👋</small>
+<strong id="homeName">Player</strong>
+</div>
+</div>
+
+<div class="actions">
+
+<button class="iconBtn" onclick="openNotifications()">🔔</button>
+
+<button class="iconBtn adminBtn" onclick="openAdmin()">⚙️</button>
+
+</div>
+</div>
+
+
+<!-- COIN WALLET -->
+
+<div class="wallet">
+
+<div class="walletTop">
+<span>MY ZX COINS</span>
+<span>1 ₹ = 1 COIN</span>
+</div>
+
+<div class="coinBalance">
+
+<div class="coin">FF</div>
+
+<div>
+<strong id="coinBalance">0</strong>
+<small>Gold FF Coins</small>
+</div>
+
+</div>
+
+<div class="walletBtns">
+
+<button onclick="openCoinScreen()">
+🪙 Coin Center
+</button>
+
+<button onclick="showToast('Coin withdrawal is unavailable in this prototype')">
+Withdraw
+</button>
+
+</div>
+</div>
+
+
+<!-- CATEGORIES -->
+
+<div class="section">
+
+<div class="sectionTitle">
+<h3>Categories</h3>
+<span>ALL</span>
+</div>
+
+<div class="categories">
+
+<div class="category" onclick="filterRooms('Solo')">
+<div class="categoryIcon">👤</div>
+<small>Solo</small>
+</div>
+
+<div class="category" onclick="filterRooms('Duo')">
+<div class="categoryIcon">👥</div>
+<small>Duo</small>
+</div>
+
+<div class="category" onclick="filterRooms('Squad')">
+<div class="categoryIcon">🔥</div>
+<small>Squad</small>
+</div>
+
+<div class="category" onclick="filterRooms('All')">
+<div class="categoryIcon">🏆</div>
+<small>All</small>
+</div>
+
+</div>
+</div>
+
+
+<!-- TOURNAMENTS -->
+
+<div class="section">
+
+<div class="sectionTitle">
+<h3>Free Fire Battles</h3>
+<span id="roomCount">0 ROOMS</span>
+</div>
+
+<div id="homeRooms" class="tournaments"></div>
+
+</div>
+
+</section>
+
+
+<!-- ==================================================
+NOTIFICATIONS
+================================================== -->
+
+<section id="notifications" class="screen">
+
+<div class="header">
+
+<button class="back" onclick="goHome()">←</button>
+
+<div>
+<h2>Notifications</h2>
+<p>ZX Esports updates</p>
+</div>
+
+</div>
+
+<div class="section">
+
+<div id="notificationList"></div>
+
+</div>
+</section>
+
+
+<!-- ==================================================
+COIN CENTER
+================================================== -->
+
+<section id="coins" class="screen">
+
+<div class="header">
+
+<button class="back" onclick="goHome()">←</button>
+
+<div>
+<h2>Coin Center</h2>
+<p>ZX Esports coin prototype</p>
+</div>
+
+</div>
+
+<div class="coinBox">
+
+<div class="bigCoin">FF</div>
+
+<h3>
+<span id="coinBalance2">0</span> Coins
+</h3>
+
+<p>
+Gold FF coin system for the prototype.
+<br>
+Coin conversion shown here is for UI testing only.
+</p>
+
+<span class="demo">
+DEMO / TEST MODE
+</span>
+
+</div>
+
+<div class="section">
+
+<div class="sectionTitle">
+<h3>Coin Activity</h3>
+</div>
+
+<div id="coinHistory"></div>
+
+</div>
+
+</section>
+
+
+<!-- ==================================================
+ADMIN LOGIN
+================================================== -->
+
+<section id="adminLogin" class="screen">
+
+<div class="header">
+
+<button class="back" onclick="goHome()">←</button>
+
+<div>
+<h2>Admin Access</h2>
+<p>ZX Esports management</p>
+</div>
+
+</div>
+
+<div class="section">
+
+<div class="authCard" style="animation:none">
+
+<h2>Admin Login</h2>
+
+<p class="sub">
+Demo administrator access
+</p>
+
+<div class="field">
+<label>Admin Username</label>
+<input class="input" id="adminName" placeholder="Admin username">
+</div>
+
+<div class="field">
+<label>Admin Password</label>
+<input class="input" id="adminPass" type="password" placeholder="Admin password">
+</div>
+
+<button class="primary" onclick="adminLogin()">
+ENTER ADMIN PANEL
+</button>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- ==================================================
+ADMIN PANEL
+================================================== -->
+
+<section id="adminPanel" class="screen">
+
+<div class="header">
+
+<button class="back" onclick="goHome()">←</button>
+
+<div>
+<h2>Admin Panel</h2>
+<p>ZX Esports control center</p>
+</div>
+
+</div>
+
+
+<div class="adminGrid">
+
+<div class="stat">
+<span>TOTAL ROOMS</span>
+<strong id="adminRoomCount">0</strong>
+</div>
+
+<div class="stat">
+<span>USERS</span>
+<strong id="adminUsers">1</strong>
+</div>
+
+<div class="stat">
+<span>NOTIFICATIONS</span>
+<strong id="adminNotificationCount">0</strong>
+</div>
+
+<div class="stat">
+<span>COINS</span>
+<strong id="adminCoins">0</strong>
+</div>
+
+</div>
+
+
+<div class="adminMenu">
+
+<div class="adminOption" onclick="openCreateRoom()">
+
+<div class="adminOptionIcon">➕</div>
+
+<div>
+<h4>Create Custom Room</h4>
+<p>Create Solo, Duo or Squad room</p>
+</div>
+
+</div>
+
+
+<div class="adminOption" onclick="openEditRooms()">
+
+<div class="adminOptionIcon">✏️</div>
+
+<div>
+<h4>Edit Custom Rooms</h4>
+<p>Edit or delete existing rooms</p>
+</div>
+
+</div>
+
+
+<div class="adminOption" onclick="openNotifications()">
+
+<div class="adminOptionIcon">🔔</div>
+
+<div>
+<h4>Notifications</h4>
+<p>View system notifications</p>
+</div>
+
+</div>
+
+
+<div class="adminOption" onclick="openCoinScreen()">
+
+<div class="adminOptionIcon">🪙</div>
+
+<div>
+<h4>Coin Center</h4>
+<p>View prototype coin activity</p>
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- ==================================================
+CREATE ROOM
+================================================== -->
+
+<section id="createRoom" class="screen">
+
+<div class="header">
+
+<button class="back" onclick="openAdminPanel()">←</button>
+
+<div>
+<h2 id="createTitle">Create Custom Room</h2>
+<p>Manage Free Fire battle room</p>
+</div>
+
+</div>
+
+
+<div class="formBox">
+
+<div class="formField">
+
+<label>Room Thumbnail</label>
+
+<input
+class="input"
+type="file"
+id="roomImage"
+accept="image/*"
+onchange="previewImage(event)"
+>
+
+<img id="imagePreview" class="preview">
+
+</div>
+
+
+<div class="formField">
+
+<label>Room Name</label>
+
+<input
+class="input"
+id="roomName"
+placeholder="Example: ZX Night Battle"
+>
+
+</div>
+
+
+<div class="formField">
+
+<label>Game Mode</label>
+
+<div class="modes">
+
+<div class="mode selected" onclick="selectMode(this,'Solo')">
+👤 Solo
+</div>
+
+<div class="mode" onclick="selectMode(this,'Duo')">
+👥 Duo
+</div>
+
+<div class="mode" onclick="selectMode(this,'Squad')">
+🔥 Squad
+</div>
+
+</div>
+
+</div>
+
+
+<div class="formField">
+
+<label>Date</label>
+
+<input
+class="input"
+type="date"
+id="roomDate"
+>
+
+</div>
+
+
+<div class="formField">
+
+<label>Time</label>
+
+<input
+class="input"
+type="time"
+id="roomTime"
+>
+
+</div>
+
+
+<div class="formField">
+
+<label>Room ID</label>
+
+<input
+class="input"
+id="roomId"
+placeholder="Example: ZX123456"
+>
+
+</div>
+
+
+<div class="formField">
+
+<label>Room Status</label>
+
+<select id="roomStatus">
+
+<option>Upcoming</option>
+<option>Ongoing</option>
+<option>Completed</option>
+
+</select>
+
+</div>
+
+
+<button
+class="primary"
+id="saveRoomButton"
+onclick="saveRoom()">
+
+CREATE CUSTOM ROOM
+
+</button>
+
+</div>
+
+</section>
+
+
+<!-- ==================================================
+EDIT ROOMS
+================================================== -->
+
+<section id="editRooms" class="screen">
+
+<div class="header">
+
+<button class="back" onclick="openAdminPanel()">←</button>
+
+<div>
+<h2>Edit Rooms</h2>
+<p>Manage custom rooms</p>
+</div>
+
+</div>
+
+<div class="section">
+
+<div id="editRoomList"></div>
+
+</div>
+
+</section>
+
+
+<!-- ==================================================
+BOTTOM NAV
+================================================== -->
+
+<div id="bottomNav" class="bottom">
+
+<div class="nav active" onclick="goHome()">
+<div>🏠</div>
+Home
+</div>
+
+<div class="nav" onclick="showToast('Search UI coming next')">
+<div>🔍</div>
+Search
+</div>
+
+<div class="nav" onclick="showToast('Choose a category above')">
+<div>🗂️</div>
+Category
+</div>
+
+<div class="nav" onclick="openCoinScreen()">
+<div>🪙</div>
+Coins
+</div>
+
+<div class="nav" onclick="showToast('My Tournament UI coming next')">
+<div>🏆</div>
+My Tournament
+</div>
+
+</div>
+
+
+<div id="toast" class="toast"></div>
+
+</div>
+
+
+<script>
+
+/* ==================================================
+DATA
+================================================== */
+
+let selectedMode="Solo";
+let editingRoomId=null;
+
+let rooms=
+JSON.parse(
+localStorage.getItem("zxRooms") || "[]"
+);
+
+let notifications=
+JSON.parse(
+localStorage.getItem("zxNotifications") || "[]"
+);
+
+let coinHistory=
+JSON.parse(
+localStorage.getItem("zxCoinHistory") || "[]"
+);
+
+
+/* ==================================================
+HELPERS
+================================================== */
+
+function saveData(){
+
+localStorage.setItem(
+"zxRooms",
+JSON.stringify(rooms)
+);
+
+localStorage.setItem(
+"zxNotifications",
+JSON.stringify(notifications)
+);
+
+localStorage.setItem(
+"zxCoinHistory",
+JSON.stringify(coinHistory)
+);
+
+}
+
+function getCoins(){
+
+return Number(
+localStorage.getItem("zxCoins") || 0
+);
+
+}
+
+function setCoins(value){
+
+localStorage.setItem(
+"zxCoins",
+String(value)
+);
+
+updateCoins();
+
+}
+
+function updateCoins(){
+
+const value=getCoins();
+
+document.getElementById("coinBalance").textContent=value;
+
+document.getElementById("coinBalance2").textContent=value;
+
+document.getElementById("adminCoins").textContent=value;
+
+}
+
+
+/* ==================================================
+SCREEN CONTROL
+================================================== */
+
+const ids=[
+"register",
+"login",
+"home",
+"notifications",
+"coins",
+"adminLogin",
+"adminPanel",
+"createRoom",
+"editRooms"
+];
+
+function hideAll(){
+
+ids.forEach(id=>{
+
+const el=document.getElementById(id);
+
+if(el){
+
+el.style.display="none";
+
+}
+
+});
+
+document.getElementById(
+"bottomNav"
+).style.display="none";
+
+}
+
+function show(id){
+
+hideAll();
+
+const el=document.getElementById(id);
+
+el.style.display=
+id==="register" ||
+id==="login"
+?"flex"
+:"block";
+
+el.style.animation=
+"screenIn .45s ease";
+
+window.scrollTo(0,0);
+
+}
+
+
+/* ==================================================
+REGISTER
+================================================== */
+
+function register(){
+
+const name=
+document.getElementById("regName").value.trim();
+
+const email=
+document.getElementById("regEmail").value.trim();
+
+const phone=
+document.getElementById("regPhone").value.trim();
+
+const pass=
+document.getElementById("regPass").value;
+
+const pass2=
+document.getElementById("regPass2").value;
+
+if(!name||!email||!phone||!pass||!pass2){
+
+showToast("Please fill all fields");
+
+return;
+
+}
+
+if(pass!==pass2){
+
+showToast("Passwords do not match");
+
+return;
+
+}
+
+if(pass.length<6){
+
+showToast("Password must be 6+ characters");
+
+return;
+
+}
+
+localStorage.setItem(
+"zxUser",
+JSON.stringify({
+name,
+email,
+phone,
+pass
+})
+);
+
+localStorage.setItem(
+"zxCoins",
+"0"
+);
+
+addNotification(
+"Welcome to ZX Esports",
+"Your account was created successfully."
+);
+
+openHome(name);
+
+}
+
+
+/* ==================================================
+LOGIN
+================================================== */
+
+function login(){
+
+const name=
+document.getElementById("loginName").value.trim();
+
+const pass=
+document.getElementById("loginPass").value;
+
+const user=
+JSON.parse(
+localStorage.getItem("zxUser") || "null"
+);
+
+if(!user){
+
+showToast("Please register first");
+
+return;
+
+}
+
+if(
+(name===user.name||name===user.email)
+&&
+pass===user.pass
+){
+
+const loginScreen=
+document.getElementById("login");
+
+loginScreen.style.animation=
+"screenOut .35s ease";
+
+setTimeout(()=>{
+
+openHome(user.name);
+
+},350);
+
+}else{
+
+showToast("Invalid login details");
+
+}
+
+}
+
+
+/* ==================================================
+HOME
+================================================== */
+
+function openHome(name){
+
+hideAll();
+
+document.getElementById(
+"home"
+).style.display="block";
+
+document.getElementById(
+"home"
+).style.animation=
+"screenIn .5s ease";
+
+document.getElementById(
+"homeName"
+).textContent=name;
+
+document.getElementById(
+"avatar"
+).textContent=
+name.substring(0,2).toUpperCase();
+
+document.getElementById(
+"bottomNav"
+).style.display="flex";
+
+updateCoins();
+
+renderRooms();
+
+}
+
+function goHome(){
+
+const user=
+JSON.parse(
+localStorage.getItem("zxUser") || "null"
+);
+
+if(user){
+
+openHome(user.name);
+
+}else{
+
+show("login");
+
+}
+
+}
+
+
+/* ==================================================
+ADMIN
+================================================== */
+
+function openAdmin(){
+
+show("adminLogin");
+
+}
+
+function adminLogin(){
+
+const user=
+document.getElementById("adminName").value.trim();
+
+const pass=
+document.getElementById("adminPass").value;
+
+/*
+  DEMO ADMIN AUTHENTICATION.
+  Production app should use secure server-side auth.
+*/
+
+if(
+user==="admin" &&
+pass==="demo123"
+){
+
+openAdminPanel();
+
+}else{
+
+showToast(
+"Demo admin login: admin / demo123"
+);
+
+}
+
+}
+
+function openAdminPanel(){
+
+show("adminPanel");
+
+updateAdminStats();
+
+}
+
+function updateAdminStats(){
+
+document.getElementById(
+"adminRoomCount"
+).textContent=rooms.length;
+
+document.getElementById(
+"adminNotificationCount"
+).textContent=
+notifications.length;
+
+updateCoins();
+
+}
+
+
+/* ==================================================
+CREATE ROOM
+================================================== */
+
+function openCreateRoom(){
+
+editingRoomId=null;
+
+show("createRoom");
+
+document.getElementById(
+"createTitle"
+).textContent=
+"Create Custom Room";
+
+document.getElementById(
+"saveRoomButton"
+).textContent=
+"CREATE CUSTOM ROOM";
+
+clearRoomForm();
+
+}
+
+function clearRoomForm(){
+
+document.getElementById("roomName").value="";
+
+document.getElementById("roomDate").value="";
+
+document.getElementById("roomTime").value="";
+
+document.getElementById("roomId").value="";
+
+document.getElementById("roomStatus").value="Upcoming";
+
+document.getElementById("imagePreview").src="";
+
+selectedMode="Solo";
+
+document
+.querySelectorAll(".mode")
+.forEach((m,i)=>{
+
+m.classList.toggle(
+"selected",
+i===0
+);
+
+});
+
+}
+
+function selectMode(el,mode){
+
+selectedMode=mode;
+
+document
+.querySelectorAll(".mode")
+.forEach(x=>
+x.classList.remove("selected")
+);
+
+el.classList.add("selected");
+
+}
+
+
+/* ==================================================
+IMAGE PREVIEW
+================================================== */
+
+function previewImage(event){
+
+const file=
+event.target.files[0];
+
+if(!file)return;
+
+const reader=
+new FileReader();
+
+reader.onload=function(e){
+
+document.getElementById(
+"imagePreview"
+).src=e.target.result;
+
+};
+
+reader.readAsDataURL(file);
+
+}
+
+
+/* ==================================================
+SAVE ROOM
+================================================== */
+
+function saveRoom(){
+
+const name=
+document.getElementById(
+"roomName"
+).value.trim();
+
+const date=
+document.getElementById(
+"roomDate"
+).value;
+
+const time=
+document.getElementById(
+"roomTime"
+).value;
+
+const roomId=
+document.getElementById(
+"roomId"
+).value.trim();
+
+const status=
+document.getElementById(
+"roomStatus"
+).value;
+
+const image=
+document.getElementById(
+"imagePreview"
+).src || "";
+
+if(!name){
+
+showToast("Enter room name");
+
+return;
+
+}
+
+if(!date){
+
+showToast("Select date");
+
+return;
+
+}
+
+if(!time){
+
+showToast("Select time");
+
+return;
+
+}
+
+if(!roomId){
+
+showToast("Enter room ID");
+
+return;
+
+}
+
+
+if(editingRoomId){
+
+const room=
+rooms.find(
+r=>r.id===editingRoomId
+);
+
+if(room){
+
+room.name=name;
+room.mode=selectedMode;
+room.date=date;
+room.time=time;
+room.roomId=roomId;
+room.status=status;
+
+if(image){
+room.image=image;
+}
+
+}
+
+addNotification(
+"Room updated",
+name+" was updated by admin."
+);
+
+showToast("Room updated");
+
+}else{
+
+const room={
+
+id:Date.now(),
+
+name:name,
+
+mode:selectedMode,
+
+date:date,
+
+time:time,
+
+roomId:roomId,
+
+status:status,
+
+image:image,
+
+createdAt:new Date().toLocaleString()
+
+};
+
+rooms.unshift(room);
+
+addNotification(
+"New Free Fire Battle",
+name+" has been created."
+);
+
+showToast("Custom room created");
+
+}
+
+saveData();
+
+setTimeout(
+openAdminPanel,
+600
+);
+
+}
+
+
+/* ==================================================
+EDIT ROOMS
+================================================== */
+
+function openEditRooms(){
+
+show("editRooms");
+
+renderEditRooms();
+
+}
+
+function renderEditRooms(){
+
+const box=
+document.getElementById(
+"editRoomList"
+);
+
+box.innerHTML="";
+
+if(rooms.length===0){
+
+box.innerHTML=`
+<div class="notification">
+<strong>No custom rooms</strong>
+<p>Create your first room from Admin Panel.</p>
+</div>
+`;
+
+return;
+
+}
+
+rooms.forEach(room=>{
+
+const div=
+document.createElement("div");
+
+div.className="editRoom";
+
+div.innerHTML=`
+
+<img src="${
+room.image || 
+'data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%22480%22 height=%22200%22%3E%3Crect width=%22100%25%22 height=%22100%25%22 fill=%22%23183d29%22/%3E%3Ctext x=%2250%25%22 y=%2255%25%22 text-anchor=%22middle%22 fill=%22white%22 font-size=%2230%22%3EZX ESPORTS%3C/text%3E%3C/svg%3E'
+}">
+
+<div class="editBody">
+
+<h4>${escapeHTML(room.name)}</h4>
+
+<p style="
+color:#7f8b84;
+font-size:9px;
+margin-top:5px;
+">
+${room.mode} • ${room.date} • ${room.time}
+</p>
+
+<div class="editButtons">
+
+<button
+class="edit"
+onclick="editRoom(${room.id})">
+✏️ Edit
+</button>
+
+<button
+onclick="deleteRoom(${room.id})">
+🗑️ Delete
+</button>
+
+</div>
+
+</div>
+
+`;
+
+box.appendChild(div);
+
+});
+
+}
+
+function editRoom(id){
+
+const room=
+rooms.find(r=>r.id===id);
+
+if(!room)return;
+
+editingRoomId=id;
+
+show("createRoom");
+
+document.getElementById(
+"createTitle"
+).textContent=
+"Edit Custom Room";
+
+document.getElementById(
+"saveRoomButton"
+).textContent=
+"UPDATE CUSTOM ROOM";
+
+document.getElementById(
+"roomName"
+).value=room.name;
+
+document.getElementById(
+"roomDate"
+).value=room.date;
+
+document.getElementById(
+"roomTime"
+).value=room.time;
+
+document.getElementById(
+"roomId"
+).value=room.roomId;
+
+document.getElementById(
+"roomStatus"
+).value=room.status;
+
+document.getElementById(
+"imagePreview"
+).src=room.image || "";
+
+selectedMode=room.mode;
+
+document
+.querySelectorAll(".mode")
+.forEach(el=>{
+
+el.classList.toggle(
+"selected",
+el.textContent.includes(room.mode)
+);
+
+});
+
+}
+
+function deleteRoom(id){
+
+if(!confirm("Delete this custom room?"))return;
+
+const room=
+rooms.find(r=>r.id===id);
+
+rooms=
+rooms.filter(
+r=>r.id!==id
+);
+
+saveData();
+
+if(room){
+
+addNotification(
+"Room deleted",
+room.name+" was removed."
+);
+
+}
+
+renderEditRooms();
+
+updateAdminStats();
+
+showToast("Room deleted");
+
+}
+
+
+/* ==================================================
+HOME ROOMS
+================================================== */
+
+function renderRooms(){
+
+const box=
+document.getElementById(
+"homeRooms"
+);
+
+box.innerHTML="";
+
+document.getElementById(
+"roomCount"
+).textContent=
+rooms.length+" ROOMS";
+
+if(rooms.length===0){
+
+box.innerHTML=`
+
+<div class="notification">
+
+<strong>No battles available</strong>
+
+<p>
+Admin can create a custom Free Fire room
+from the Admin Panel.
+</p>
+
+</div>
+
+`;
+
+return;
+
+}
+
+rooms.forEach(room=>{
+
+box.appendChild(
+createRoomCard(room)
+);
+
+});
+
+}
+
+function createRoomCard(room){
+
+const div=
+document.createElement("div");
+
+div.className="tournament";
+
+const fallback=
+"data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%22480%22 height=%22200%22%3E%3Crect width=%22100%25%22 height=%22100%25%22 fill=%22%23183d29%22/%3E%3Ctext x=%2250%25%22 y=%2255%25%22 text-anchor=%22middle%22 fill=%22white%22 font-size=%2230%22%3EZX ESPORTS%3C/text%3E%3C/svg%3E";
+
+div.innerHTML=`
+
+<img
+class="thumb"
+src="${room.image || fallback}"
+alt="Free Fire Battle">
+
+<div class="tournamentBody">
+
+<span class="badge">
+${escapeHTML(room.status)}
+</span>
+
+<h4>
+${escapeHTML(room.name)}
+</h4>
+
+<div class="roomInfo">
+
+<div>
+🎮 ${escapeHTML(room.mode)}
+</div>
+
+<div>
+📅 ${escapeHTML(room.date)}
+</div>
+
+<div>
+⏰ ${escapeHTML(room.time)}
+</div>
+
+</div>
+
+<button
+class="join"
+onclick="joinRoom(${room.id})">
+
+VIEW ROOM
+
+</button>
+
+</div>
+
+`;
+
+return div;
+
+}
+
+function joinRoom(id){
+
+const room=
+rooms.find(r=>r.id===id);
+
+if(!room)return;
+
+addNotification(
+"Room selected",
+room.name+" selected. Room ID: "+room.roomId
+);
+
+showToast(
+"Room ID: "+room.roomId
+);
+
+}
+
+
+/* ==================================================
+FILTER
+================================================== */
+
+function filterRooms(mode){
+
+if(mode==="All"){
+
+renderRooms();
+
+return;
+
+}
+
+const box=
+document.getElementById(
+"homeRooms"
+);
+
+box.innerHTML="";
+
+const filtered=
+rooms.filter(
+r=>r.mode===mode
+);
+
+document.getElementById(
+"roomCount"
+).textContent=
+filtered.length+" "+mode;
+
+if(!filtered.length){
+
+box.innerHTML=`
+<div class="notification">
+<strong>No ${mode} rooms</strong>
+<p>No custom room is available in this category.</p>
+</div>
+`;
+
+return;
+
+}
+
+filtered.forEach(room=>{
+
+box.appendChild(
+createRoomCard(room)
+);
+
+});
+
+}
+
+
+/* ==================================================
+NOTIFICATIONS
+================================================== */
+
+function addNotification(title,text){
+
+notifications.unshift({
+
+id:Date.now(),
+
+title:title,
+
+text:text,
+
+time:new Date().toLocaleString(),
+
+unread:true
+
+});
+
+notifications=
+notifications.slice(0,50);
+
+saveData();
+
+}
+
+function openNotifications(){
+
+show("notifications");
+
+renderNotifications();
+
+}
+
+function renderNotifications(){
+
+const box=
+document.getElementById(
+"notificationList"
+);
+
+box.innerHTML="";
+
+if(!notifications.length){
+
+box.innerHTML=`
+<div class="notification">
+<strong>No notifications</strong>
+<p>You are all caught up.</p>
+</div>
+`;
+
+return;
+
+}
+
+notifications.forEach(n=>{
+
+const div=
+document.createElement("div");
+
+div.className=
+"notification "+
+(n.unread?"unread":"");
+
+div.innerHTML=`
+
+<strong>
+${escapeHTML(n.title)}
+</strong>
+
+<p>
+${escapeHTML(n.text)}
+</p>
+
+<p style="margin-top:6px;font-size:8px;">
+${escapeHTML(n.time)}
+</p>
+
+`;
+
+box.appendChild(div);
+
+n.unread=false;
+
+});
+
+saveData();
+
+}
+
+
+/* ==================================================
+COINS
+================================================== */
+
+function openCoinScreen(){
+
+show("coins");
+
+updateCoins();
+
+renderCoinHistory();
+
+}
+
+function renderCoinHistory(){
+
+const box=
+document.getElementById(
+"coinHistory"
+);
+
+box.innerHTML="";
+
+if(!coinHistory.length){
+
+box.innerHTML=`
+<div class="notification">
+<strong>No coin activity</strong>
+<p>Your prototype coin history will appear here.</p>
+</div>
+`;
+
+return;
+
+}
+
+coinHistory.forEach(item=>{
+
+const div=
+document.createElement("div");
+
+div.className="notification";
+
+div.innerHTML=`
+
+<strong>
+🪙 ${escapeHTML(item.title)}
+</strong>
+
+<p>
+${escapeHTML(item.text)}
+</p>
+
+`;
+
+box.appendChild(div);
+
+});
+
+}
+
+
+/*
+  Prototype-only coin credit.
+  No real payment processing.
+*/
+
+function demoCoinCredit(amount){
+
+amount=Number(amount);
+
+if(!amount || amount<=0){
+
+showToast("Enter a valid amount");
+
+return;
+
+}
+
+const newBalance=
+getCoins()+amount;
+
+setCoins(newBalance);
+
+coinHistory.unshift({
+
+title:"Prototype Coin Credit",
+
+text:"+"+
+amount+
+" Gold FF Coins • Test mode"
+
+});
+
+addNotification(
+"Coins credited",
+amount+
+" prototype Gold FF Coins added."
+);
+
+saveData();
+
+renderCoinHistory();
+
+showToast(
+amount+" Coins added in test mode"
+);
+
+}
+
+
+/* ==================================================
+ESCAPE HTML
+================================================== */
+
+function escapeHTML(text){
+
+return String(text)
+.replaceAll("&","&amp;")
+.replaceAll("<","&lt;")
+.replaceAll(">","&gt;")
+.replaceAll('"',"&quot;")
+.replaceAll("'","&#039;");
+
+}
+
+
+/* ==================================================
+TOAST
+================================================== */
+
+let toastTimer;
+
+function showToast(message){
+
+const toast=
+document.getElementById("toast");
+
+toast.textContent=message;
+
+toast.classList.add("show");
+
+clearTimeout(toastTimer);
+
+toastTimer=
+setTimeout(()=>{
+
+toast.classList.remove("show");
+
+},2300);
+
+}
+
+
+/* ==================================================
+INITIAL LOAD
+================================================== */
+
+window.addEventListener("load",()=>{
+
+hideAll();
+
+show("register");
+
+updateCoins();
+
+});
+
+</script>
+
+</body>
+</html>
