@@ -3399,6 +3399,27 @@ if(currentUser){
 }
 
 </script>
+    // Import the functions you need from the SDKs you need
+import { initializeApp } from "firebase/app";
+import { getAnalytics } from "firebase/analytics";
+// TODO: Add SDKs for Firebase products that you want to use
+// https://firebase.google.com/docs/web/setup#available-libraries
+
+// Your web app's Firebase configuration
+// For Firebase JS SDK v7.20.0 and later, measurementId is optional
+const firebaseConfig = {
+  apiKey: "AIzaSyDptFca-htP-dj2DRB87GfRubOc982sn_U",
+  authDomain: "ff-turnament-ba3c1.firebaseapp.com",
+  projectId: "ff-turnament-ba3c1",
+  storageBucket: "ff-turnament-ba3c1.firebasestorage.app",
+  messagingSenderId: "738233817237",
+  appId: "1:738233817237:web:54ae0fa130890e53a9239c",
+  measurementId: "G-S4G23R9014"
+};
+
+// Initialize Firebase
+const app = initializeApp(firebaseConfig);
+const analytics = getAnalytics(app);
 
 </body>
 </html>
